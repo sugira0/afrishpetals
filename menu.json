@@ -1,0 +1,169 @@
+﻿{
+  "restaurant": {
+    "name": "Harbor Table",
+    "description": "Indoor and poolside spaces available. Prepare your event with us.",
+    "hours": "Mon-Sun 11:00 AM - 10:00 PM",
+    "phone": "(555) 010-2026",
+    "email": "events@harbortable.com",
+    "address": "125 Marina View Drive, San Diego, CA 92101",
+    "footerNote": "Call us for custom packages, group deals, and same-week availability.",
+    "heroImage": "assets/images/hero.svg",
+    "heroGallery": [
+      {
+        "url": "assets/images/gallery-indoor.svg",
+        "alt": "Elegant indoor dining area"
+      },
+      {
+        "url": "assets/images/gallery-poolside.svg",
+        "alt": "Poolside event setup"
+      },
+      {
+        "url": "assets/images/gallery-service.svg",
+        "alt": "Restaurant service experience"
+      }
+    ]
+  },
+  "categories": [
+    {
+      "id": "dining",
+      "name": "Dining Experiences",
+      "description": "Signature spaces designed for relaxed meals, celebrations, and business hosting.",
+      "ctaLabel": "Book Dining",
+      "items": [
+        {
+          "name": "Indoor Signature Dining",
+          "description": "Climate-controlled luxury seating with curated service and chef-recommended courses.",
+          "price": 39,
+          "tags": ["Family Friendly", "Fine Dining"],
+          "image": "assets/images/service-dining.svg"
+        },
+        {
+          "name": "Poolside Sunset Service",
+          "description": "Open-air seating by the pool with ambient lighting and premium evening service.",
+          "price": 49,
+          "tags": ["Poolside", "Evening Vibes"],
+          "image": "assets/images/service-poolside.svg"
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "name": "Event Hosting",
+      "description": "From birthdays to receptions, we design memorable events with seamless execution.",
+      "ctaLabel": "Get Event Quote",
+      "items": [
+        {
+          "name": "Private Indoor Events",
+          "description": "Dedicated indoor hall with customized decor, audio setup, and coordinated staffing.",
+          "price": 799,
+          "tags": ["Birthdays", "Corporate"],
+          "image": "assets/images/service-events.svg"
+        },
+        {
+          "name": "Poolside Celebration Package",
+          "description": "Stylized poolside setup with lighting and custom hospitality flow.",
+          "price": 1199,
+          "tags": ["Engagements", "Anniversaries"],
+          "image": "assets/images/service-poolside.svg"
+        },
+        {
+          "name": "Full-Service Wedding Reception",
+          "description": "Venue planning, multi-course catering, hospitality team, and timeline management.",
+          "price": 3499,
+          "tags": ["Wedding", "Premium"],
+          "image": "assets/images/service-events.svg"
+        },
+        {
+          "name": "Event Proposal Preparation",
+          "description": "Get a personalized proposal with concept, budget estimate, timeline, and service inclusions.",
+          "price": 149,
+          "tags": ["Planning", "Custom Proposal"],
+          "image": "assets/images/service-proposal.svg"
+        }
+      ]
+    },
+    {
+      "id": "catering",
+      "name": "Catering Services",
+      "description": "Chef-led catering tailored for offices, homes, private villas, and outdoor venues.",
+      "ctaLabel": "Plan Catering",
+      "items": [
+        {
+          "name": "Corporate Lunch Catering",
+          "description": "On-time delivery, balanced menu options, and setup-ready packaging.",
+          "price": 299,
+          "tags": ["Office", "Weekday"],
+          "image": "assets/images/service-catering.svg"
+        },
+        {
+          "name": "Home Party Catering",
+          "description": "Buffet stations, live grills, and service staff for stress-free hosting.",
+          "price": 449,
+          "tags": ["House Events", "Buffet"],
+          "image": "assets/images/service-catering.svg"
+        }
+      ]
+    },
+    {
+      "id": "concierge",
+      "name": "Concierge & Extras",
+      "description": "Add-on services to elevate your experience from convenient to unforgettable.",
+      "ctaLabel": "Customize Package",
+      "items": [
+        {
+          "name": "Custom Decor Styling",
+          "description": "Theme-based floral, table styling, and branded welcome setups.",
+          "price": 199,
+          "tags": ["Add-On", "Decor"],
+          "image": "assets/images/service-concierge.svg"
+        },
+        {
+          "name": "Live Music Setup",
+          "description": "Acoustic or DJ-ready arrangement with coordinated sound checks.",
+          "price": 259,
+          "tags": ["Entertainment", "Evening"],
+          "image": "assets/images/service-concierge.svg"
+        }
+      ]
+    }
+  ],
+  "trust": {
+    "testimonials": [
+      {
+        "quote": "They handled our engagement dinner flawlessly. The proposal process was clear and fast.",
+        "author": "Maya R.",
+        "role": "Private Event Client"
+      },
+      {
+        "quote": "From tasting to execution, Harbor Table felt like a true hospitality partner.",
+        "author": "Daniel K.",
+        "role": "Corporate Host"
+      },
+      {
+        "quote": "Poolside setup was stunning and the team coordinated every detail perfectly.",
+        "author": "Aisha T.",
+        "role": "Birthday Celebration"
+      }
+    ],
+    "clients": [
+      { "name": "Marina Co.", "logo": "assets/logos/logo-marina.svg" },
+      { "name": "Aurora Labs", "logo": "assets/logos/logo-aurora.svg" },
+      { "name": "Oakline", "logo": "assets/logos/logo-oakline.svg" }
+    ],
+    "gallery": [
+      { "url": "assets/images/gallery-indoor.svg", "alt": "Indoor event setup" },
+      { "url": "assets/images/gallery-poolside.svg", "alt": "Poolside evening setup" },
+      { "url": "assets/images/gallery-service.svg", "alt": "Hosted dining experience" }
+    ]
+  },
+  "venueDetails": {
+    "capacity": ["Indoor Hall: Up to 140 guests", "Poolside Deck: Up to 90 guests", "Private Room: Up to 28 guests"],
+    "inclusions": ["Event coordinator and run sheet", "Service team and table setup", "Sound support and ambient lighting"],
+    "addons": ["Custom decor themes", "Live station or signature mocktail bar", "Live acoustic or DJ setup"],
+    "cancellationPolicy": "Free rescheduling up to 7 days before event date. Cancellations within 72 hours may incur staffing and prep charges."
+  },
+  "map": {
+    "embedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-117.176%2C32.706%2C-117.152%2C32.724&layer=mapnik&marker=32.715%2C-117.164",
+    "label": "Harbor Table location map"
+  }
+}

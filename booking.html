@@ -1,0 +1,264 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afrish Petals | Booking</title>
+  <meta name="description" content="Book a table or reserve an event at Afrish Petals in Kigali, Rwanda.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="preconnect" href="https://images.pexels.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-booking">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Afrish Petals home">
+        <img class="brand-logo" src="assets/logos/Afrish_Petals_logo-removebg-preview.png" alt="Afrish Petals logo">
+        <span class="brand-text">Afrish Petals</span>
+      </a>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <nav id="main-nav" class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a class="active" href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="nav-book" href="booking.html">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page-hero booking-hero">
+      <div class="container booking-hero-shell">
+        <div class="booking-hero-copy">
+          <p class="kicker">Booking</p>
+          <h1>Reserve your table or event in minutes.</h1>
+          <p class="lead">Choose your booking type, preferred date, and guest details. Our team will confirm your request quickly with a personalized response.</p>
+          <div class="booking-badge-row" aria-label="Booking highlights">
+            <span class="booking-badge">Fast Confirmation</span>
+            <span class="booking-badge">Flexible Spaces</span>
+            <span class="booking-badge">Premium Service</span>
+          </div>
+        </div>
+        <aside class="booking-hero-panel" aria-label="Booking overview">
+          <p class="booking-panel-label">Booking Experience</p>
+          <ul class="booking-panel-list">
+            <li><strong>Table reservations:</strong> Lunch, dinner, and lounge seating.</li>
+            <li><strong>Event bookings:</strong> Private, corporate, and celebration setups.</li>
+            <li><strong>Support:</strong> Direct follow-up from our hospitality team.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section booking-section">
+      <div class="container booking-grid">
+        <aside class="booking-meta">
+          <article class="booking-card">
+            <h3>Table Reservations</h3>
+            <p>Book lunch, dinner, or evening lounge seating for couples, families, and groups.</p>
+          </article>
+          <article class="booking-card">
+            <h3>Event Bookings</h3>
+            <p>Reserve indoor or poolside spaces for private parties, celebrations, and corporate gatherings.</p>
+          </article>
+          <article class="booking-card">
+            <h3>Fast Confirmation</h3>
+            <p>Most booking requests are reviewed and confirmed in a short time window.</p>
+          </article>
+          <article class="booking-card">
+            <h3>Smart Planning</h3>
+            <p>Tell us your preferred setup and we tailor a smooth, stress-free experience for your visit.</p>
+          </article>
+        </aside>
+
+        <div class="booking-form-layout">
+          <div class="booking-photo-stack">
+            <figure class="booking-side-photo">
+              <img src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Two Black professionals discussing booking details at a table">
+              <figcaption>
+                <h3>Booking Consultation</h3>
+                <p>Speak with our team for tailored table and event arrangements.</p>
+              </figcaption>
+            </figure>
+            <figure class="booking-side-photo booking-side-photo-alt">
+              <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80" alt="Team planning and negotiating event details around a desk">
+              <figcaption>
+                <h3>Event Negotiation</h3>
+                <p>Align budget, setup, and timing with our hospitality coordinators.</p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <form id="booking-form" class="contact-form-modern booking-form-modern">
+            <div class="booking-form-top">
+              <h2>Booking Details</h2>
+              <p>Complete the form below and we will contact you with confirmation and next steps.</p>
+            </div>
+
+            <div class="booking-flow" aria-label="Booking flow">
+              <span class="booking-flow-step is-active"><i aria-hidden="true">1</i>Choose Type</span>
+              <span class="booking-flow-step"><i aria-hidden="true">2</i>Share Details</span>
+              <span class="booking-flow-step"><i aria-hidden="true">3</i>Get Confirmed</span>
+            </div>
+
+            <div class="booking-type-toggle" role="group" aria-label="Choose booking type">
+              <button type="button" class="booking-type-btn is-active" data-booking-type-btn="table" aria-pressed="true">Table Reservation</button>
+              <button type="button" class="booking-type-btn" data-booking-type-btn="event" aria-pressed="false">Event Booking</button>
+            </div>
+
+            <p class="booking-intent" data-booking-intent aria-live="polite">
+              You are requesting a <strong>Table Reservation</strong>. Share your preferred seating and time.
+            </p>
+
+            <div class="form-grid">
+              <label>Full Name
+                <input type="text" name="name" placeholder="Your full name" required>
+              </label>
+              <label>Phone Number
+                <input type="tel" name="phone" placeholder="+250 7XX XXX XXX" required>
+              </label>
+            </div>
+
+            <div class="form-grid">
+              <label>Email
+                <input type="email" name="email" placeholder="your@email.com" required>
+              </label>
+              <label>Booking Type
+                <select id="booking-type" name="bookingType" required>
+                  <option value="table">Table Reservation</option>
+                  <option value="event">Event Booking</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-grid">
+              <label>Date
+                <input type="date" name="date" required>
+              </label>
+              <label>Time
+                <input type="time" name="time" required>
+              </label>
+            </div>
+
+            <div class="form-grid">
+              <label><span data-booking-guests-label>Number of Guests</span>
+                <input type="number" name="guests" min="1" max="300" placeholder="e.g. 6" required>
+              </label>
+              <label><span data-booking-space-label>Preferred Seating / Space</span>
+                <select name="space">
+                  <option value="">Choose a preference</option>
+                  <option>Indoor Dining</option>
+                  <option>Poolside</option>
+                  <option>Private Room</option>
+                  <option>Flexible</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="booking-scope" data-booking-scope="table">
+              <label>Table Preference
+                <select name="tablePreference">
+                  <option value="">Select table preference</option>
+                  <option>Quiet Corner</option>
+                  <option>Window Seat</option>
+                  <option>Family Table</option>
+                  <option>Any Available</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="booking-scope" data-booking-scope="event" hidden>
+              <div class="form-grid">
+                <label>Event Type
+                  <select name="eventType">
+                    <option value="">Select event type</option>
+                    <option>Birthday</option>
+                    <option>Corporate Dinner</option>
+                    <option>Engagement</option>
+                    <option>Reception</option>
+                    <option>Private Party</option>
+                    <option>Other</option>
+                  </select>
+                </label>
+                <label>Estimated Budget (Optional)
+                  <input type="text" name="budget" placeholder="e.g. 500,000 RWF">
+                </label>
+              </div>
+            </div>
+
+            <label>Special Requests
+              <textarea name="message" rows="5" placeholder="Any additional information for our team..."></textarea>
+            </label>
+
+            <button type="submit" class="contact-submit">
+              <span aria-hidden="true">+</span>
+              <span data-booking-submit-copy>Submit Table Request</span>
+            </button>
+
+            <p id="booking-status" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo-link" href="index.html" aria-label="Afrish Petals home">
+          <img class="footer-logo" src="assets/logos/Afrish_Petals_logo-removebg-preview.png" alt="Afrish Petals logo">
+          <span class="footer-logo-text">Afrish Petals</span>
+        </a>
+        <p>Rwandan-inspired dining and event hospitality designed for unforgettable moments.</p>
+        <a class="footer-cta" href="booking.html">Book Now</a>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0786948980">0786948980</a>
+        <a href="mailto:hello@afrishpetals.rw">hello@afrishpetals.rw</a>
+        <span>Kigali, Rwanda</span>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <div class="footer-social" aria-label="Social links">
+          <a class="social-link" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+              <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a class="social-link" href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+              <path d="M14.5 4h3.1c.2 1.8 1.2 3.1 2.9 3.8v3.1c-1.4-.1-2.7-.5-3.8-1.2v5.1c0 3-2.4 5.3-5.4 5.3S6 17.8 6 14.8s2.4-5.3 5.4-5.3c.3 0 .6 0 .9.1v3.2a2.2 2.2 0 0 0-.9-.2 2.2 2.2 0 1 0 2.2 2.2V4z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a class="social-link" href="#" aria-label="X">
+            <svg viewBox="0 0 24 24" role="img" focusable="false" aria-hidden="true">
+              <path d="M4 4h4.4l4 5.4L16.8 4H20l-6 7.3L20.4 20H16l-4.2-5.7L7.2 20H4l6.2-7.6z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="footer-year"></span> Afrish Petals</p>
+      <p>Crafted with warmth in Rwanda</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
