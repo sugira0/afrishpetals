@@ -602,7 +602,7 @@ function mountWhatsAppWidget() {
       </div>
 
       <div class="wa-panel-body">
-        <a class="wa-contact" href="https://wa.me/250786948980?text=Hello%20Maniraguha%20Daniel%2C%20I%20need%20assistance%20from%20Afrish%20Petals." target="_blank" rel="noopener">
+        <a class="wa-contact" href="https://wa.me/250786948980" target="_blank" rel="noopener" data-wa-phone="250786948980" data-wa-person="Maniraguha Daniel" data-wa-greeting-name="daniel">
           <span class="wa-avatar">MD</span>
           <span class="wa-contact-copy">
             <strong>Maniraguha Daniel</strong>
@@ -610,7 +610,7 @@ function mountWhatsAppWidget() {
             <span class="wa-online"><i aria-hidden="true"></i>Online</span>
           </span>
         </a>
-        <a class="wa-contact" href="https://wa.me/250786666111?text=Hello%20Sugira%20Erasto%2C%20I%20need%20system%20support%20from%20Afrish%20Petals." target="_blank" rel="noopener">
+        <a class="wa-contact" href="https://wa.me/250786666111" target="_blank" rel="noopener" data-wa-phone="250786666111" data-wa-person="Sugira Erasto" data-wa-greeting-name="sugira">
           <span class="wa-avatar wa-avatar-alt">SE</span>
           <span class="wa-contact-copy">
             <strong>Sugira Erasto</strong>
@@ -638,6 +638,7 @@ function mountWhatsAppWidget() {
   const trigger = widget.querySelector(".whatsapp-trigger");
   const panel = widget.querySelector(".whatsapp-panel");
   const panelClose = widget.querySelector(".wa-head-close");
+  const contacts = [...widget.querySelectorAll(".wa-contact[data-wa-phone]")];
   if (!trigger || !panel || !panelClose) {
     return;
   }
@@ -660,6 +661,29 @@ function mountWhatsAppWidget() {
 
   panel.addEventListener("click", (event) => {
     event.stopPropagation();
+  });
+
+  contacts.forEach((contact) => {
+    contact.addEventListener("click", (event) => {
+      const phone = (contact.dataset.waPhone || "").trim();
+      if (!phone) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      const greetingName = (contact.dataset.waGreetingName || "").trim().toLowerCase();
+      const personName = greetingName || "there";
+      const message = `hello ${personName} we would like to know something about Afrish Petals.`;
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      const popup = window.open(url, "_blank", "noopener,noreferrer");
+      if (!popup) {
+        window.location.href = url;
+      }
+
+      setOpen(false);
+    });
   });
 
   document.addEventListener("click", () => setOpen(false));
