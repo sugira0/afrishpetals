@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="DJ setup graphic">
+  <defs>
+    <linearGradient id="djBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1624"/>
+      <stop offset="55%" stop-color="#101f36"/>
+      <stop offset="100%" stop-color="#221427"/>
+    </linearGradient>
+    <linearGradient id="djGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef8b4a"/>
+      <stop offset="50%" stop-color="#ffb47b"/>
+      <stop offset="100%" stop-color="#ef8b4a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#djBg)"/>
+  <circle cx="320" cy="240" r="170" fill="none" stroke="url(#djGlow)" stroke-width="10"/>
+  <circle cx="1280" cy="240" r="170" fill="none" stroke="url(#djGlow)" stroke-width="10"/>
+  <circle cx="320" cy="240" r="70" fill="#0b1321" stroke="#ffb47b" stroke-width="8"/>
+  <circle cx="1280" cy="240" r="70" fill="#0b1321" stroke="#ffb47b" stroke-width="8"/>
+
+  <rect x="280" y="430" width="1040" height="230" rx="24" fill="#0b1321" stroke="#ffb47b" stroke-width="6"/>
+  <rect x="360" y="470" width="380" height="60" rx="12" fill="#152643" stroke="#ffb47b" stroke-width="4"/>
+  <rect x="860" y="470" width="380" height="60" rx="12" fill="#152643" stroke="#ffb47b" stroke-width="4"/>
+  <rect x="740" y="456" width="120" height="175" rx="12" fill="#152643" stroke="#ffb47b" stroke-width="4"/>
+
+  <g fill="#ffb47b">
+    <circle cx="450" cy="560" r="14"/>
+    <circle cx="515" cy="560" r="14"/>
+    <circle cx="580" cy="560" r="14"/>
+    <circle cx="1020" cy="560" r="14"/>
+    <circle cx="1085" cy="560" r="14"/>
+    <circle cx="1150" cy="560" r="14"/>
+  </g>
+
+  <text x="800" y="780" text-anchor="middle" fill="#ffe8d2" font-family="Arial, sans-serif" font-size="72" font-weight="700">LIVE DJ EXPERIENCE</text>
+</svg>
