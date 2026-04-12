@@ -8,9 +8,27 @@ const app = express();
 const PORT = Number(process.env.PORT) || 8080;
 const SUBMISSIONS_LOG = path.join(__dirname, "submissions.log");
 
+const CLEAN_ROUTE_TO_FILE = {
+  "/": "index.html",
+  "/home": "index.html",
+  "/about": "about.html",
+  "/events": "events.html",
+  "/booking": "booking.html",
+  "/contact": "contact.html",
+  "/qr": "qr.html"
+};
+
+const HTML_REDIRECTS = {
+  "/index.html": "/",
+  "/about.html": "/about",
+  "/events.html": "/events",
+  "/booking.html": "/booking",
+  "/contact.html": "/contact",
+  "/qr.html": "/qr"
+};
+
 app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
 
 function clean(value) {
   return String(value || "").trim();
@@ -169,6 +187,20 @@ app.post("/api/booking", async (req, res) => {
     });
   }
 });
+
+Object.entries(HTML_REDIRECTS).forEach(([fromPath, toPath]) => {
+  app.get(fromPath, (req, res) => {
+    res.redirect(301, toPath);
+  });
+});
+
+Object.entries(CLEAN_ROUTE_TO_FILE).forEach(([cleanRoute, fileName]) => {
+  app.get(cleanRoute, (req, res) => {
+    res.sendFile(path.join(__dirname, fileName));
+  });
+});
+
+app.use(express.static(__dirname));
 
 app.listen(PORT, () => {
   const mailStatus = transporter ? "enabled" : "disabled (configure SMTP env vars)";
