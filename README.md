@@ -25,13 +25,36 @@ npm install
 npm start
 ```
 
-Optional email setup:
+Optional email setup (choose one):
 
-1. Copy `.env.example` to `.env`
-2. Set SMTP values (`MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASS`)
-3. Set `MAIL_TO` to the restaurant inbox
+1. SMTP backend delivery
+2. Copy `.env.example` to `.env`
+3. Set SMTP values (`MAIL_HOST`, `MAIL_PORT`, `MAIL_USER`, `MAIL_PASS`)
+4. Set `MAIL_TO` to the restaurant inbox
 
-If SMTP is not configured, submissions are still saved locally in `submissions.log` and frontend opens a WhatsApp fallback.
+OR
+
+1. EmailJS delivery for Contact + Booking pages
+2. Open `contact.html` and set `data-emailjs-public-key` on `#contact-form`
+3. Keep `data-emailjs-service-id` + `data-emailjs-template-id` on each form (already prefilled in this project)
+4. Booking page automatically reuses the Contact page public key if booking key is not set
+
+If EmailJS is not configured or fails, the site falls back to backend API delivery. If backend delivery also fails, frontend opens a WhatsApp fallback.
+
+Suggested EmailJS variables for Booking template (if you later create a dedicated booking template):
+
+- `booking_type` or `bookingType`
+- `customer_name` or `name`
+- `phone`
+- `email`
+- `booking_date` or `date`
+- `booking_time` or `time`
+- `guests`
+- `preferred_space` or `space`
+- `table_preference` or `tablePreference`
+- `event_type` or `eventType`
+- `budget`
+- `special_requests` or `message`
 
 Open:
 

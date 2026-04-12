@@ -28,6 +28,7 @@ const bookingGuestsLabel = document.querySelector("[data-booking-guests-label]")
 const bookingSpaceLabel = document.querySelector("[data-booking-space-label]");
 const bookingSubmitCopy = document.querySelector("[data-booking-submit-copy]");
 const RESTAURANT_WHATSAPP = "250786948980";
+const EMAILJS_PLACEHOLDER_PATTERN = /^YOUR_[A-Z0-9_]+$/;
 
 function toPayload(form) {
   return Object.fromEntries(new FormData(form).entries());
@@ -56,6 +57,130 @@ function openWhatsAppFallback(message) {
   }
 }
 
+function getEmailJsConfig(form) {
+  if (!form) {
+    return null;
+  }
+
+  const serviceId = (form.dataset.emailjsServiceId || "").trim();
+  const templateId = (form.dataset.emailjsTemplateId || "").trim();
+  const publicKey = (form.dataset.emailjsPublicKey || "").trim();
+
+  return { serviceId, templateId, publicKey };
+}
+
+function isEmailJsPlaceholder(value) {
+  return !value || EMAILJS_PLACEHOLDER_PATTERN.test(value);
+}
+
+function getResolvedEmailJsConfig(form) {
+  const config = getEmailJsConfig(form);
+  if (!config) {
+    return null;
+  }
+
+  if (form !== contactForm && isEmailJsPlaceholder(config.publicKey) && contactForm) {
+    const sharedPublicKey = (contactForm.dataset.emailjsPublicKey || "").trim();
+    if (!isEmailJsPlaceholder(sharedPublicKey)) {
+      config.publicKey = sharedPublicKey;
+    }
+  }
+
+  return config;
+}
+
+async function trySendContactViaEmailJs(payload) {
+  const emailjsClient = window.emailjs;
+  const config = getResolvedEmailJsConfig(contactForm);
+
+  if (!emailjsClient || !config) {
+    return { ok: false };
+  }
+
+  const missingConfig =
+    isEmailJsPlaceholder(config.serviceId) ||
+    isEmailJsPlaceholder(config.templateId) ||
+    isEmailJsPlaceholder(config.publicKey);
+  if (missingConfig) {
+    return { ok: false };
+  }
+
+  const templateParams = {
+    from_name: payload.name || "",
+    from_email: payload.email || "",
+    reply_to: payload.email || "",
+    email: payload.email || "",
+    name: payload.name || "",
+    subject: payload.subject || "",
+    message: payload.message || "",
+    contact_subject: payload.subject || "",
+    contact_message: payload.message || ""
+  };
+
+  try {
+    await emailjsClient.send(config.serviceId, config.templateId, templateParams, {
+      publicKey: config.publicKey
+    });
+    return { ok: true };
+  } catch (error) {
+    return { ok: false, error };
+  }
+}
+
+async function trySendBookingViaEmailJs(payload) {
+  const emailjsClient = window.emailjs;
+  const config = getResolvedEmailJsConfig(bookingForm);
+
+  if (!emailjsClient || !config) {
+    return { ok: false };
+  }
+
+  const missingConfig =
+    isEmailJsPlaceholder(config.serviceId) ||
+    isEmailJsPlaceholder(config.templateId) ||
+    isEmailJsPlaceholder(config.publicKey);
+  if (missingConfig) {
+    return { ok: false };
+  }
+
+  const templateParams = {
+    booking_type: payload.bookingType || "",
+    bookingType: payload.bookingType || "",
+    customer_name: payload.name || "",
+    name: payload.name || "",
+    from_name: payload.name || "",
+    phone: payload.phone || "",
+    customer_phone: payload.phone || "",
+    email: payload.email || "",
+    from_email: payload.email || "",
+    reply_to: payload.email || "",
+    booking_date: payload.date || "",
+    date: payload.date || "",
+    booking_time: payload.time || "",
+    time: payload.time || "",
+    guests: payload.guests || "",
+    party_size: payload.guests || "",
+    preferred_space: payload.space || "",
+    space: payload.space || "",
+    table_preference: payload.tablePreference || "",
+    tablePreference: payload.tablePreference || "",
+    event_type: payload.eventType || "",
+    eventType: payload.eventType || "",
+    budget: payload.budget || "",
+    message: payload.message || "",
+    special_requests: payload.message || ""
+  };
+
+  try {
+    await emailjsClient.send(config.serviceId, config.templateId, templateParams, {
+      publicKey: config.publicKey
+    });
+    return { ok: true };
+  } catch (error) {
+    return { ok: false, error };
+  }
+}
+
 if (contactForm && formStatus) {
   contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -63,6 +188,13 @@ if (contactForm && formStatus) {
 
     const payload = toPayload(contactForm);
     try {
+      const emailJsResult = await trySendContactViaEmailJs(payload);
+      if (emailJsResult.ok) {
+        formStatus.textContent = "Thank you. Your message has been sent to the restaurant team.";
+        contactForm.reset();
+        return;
+      }
+
       const result = await postForm("/api/contact", payload);
       formStatus.textContent = result.delivered
         ? "Thank you. Your request has been sent to the restaurant team."
@@ -177,6 +309,22 @@ if (bookingForm && bookingStatus) {
     const payload = toPayload(bookingForm);
     const selectedType = (payload.bookingType || "table").toLowerCase();
     try {
+      const emailJsResult = await trySendBookingViaEmailJs(payload);
+      if (emailJsResult.ok) {
+        bookingStatus.textContent = selectedType === "event"
+          ? "Thank you. Your event booking request has been sent to the restaurant team."
+          : "Thank you. Your table booking request has been sent to the restaurant team.";
+
+        bookingForm.reset();
+        if (bookingType) {
+          const resetType = bookingType.value || "table";
+          setBookingScope(resetType);
+          setBookingTypeButtons(resetType);
+          setBookingIntent(resetType);
+        }
+        return;
+      }
+
       const result = await postForm("/api/booking", payload);
       bookingStatus.textContent = result.delivered
         ? "Thank you. Your booking request has been sent to the restaurant team."
