@@ -29,6 +29,32 @@ const bookingSpaceLabel = document.querySelector("[data-booking-space-label]");
 const bookingSubmitCopy = document.querySelector("[data-booking-submit-copy]");
 const RESTAURANT_WHATSAPP = "250786948980";
 const EMAILJS_PLACEHOLDER_PATTERN = /^YOUR_[A-Z0-9_]+$/;
+const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches || false;
+
+function rafThrottle(callback) {
+  let ticking = false;
+
+  return () => {
+    if (ticking) {
+      return;
+    }
+
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      ticking = false;
+      callback();
+    });
+  };
+}
+
+function scheduleIdle(task, timeout = 800) {
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(task, { timeout });
+    return;
+  }
+
+  window.setTimeout(() => task(), 140);
+}
 
 function toPayload(form) {
   return Object.fromEntries(new FormData(form).entries());
@@ -269,18 +295,26 @@ function setBookingIntent(type) {
   }
 }
 
+function applyBookingUi(type) {
+  const normalizedType = type === "event" ? "event" : "table";
+  setBookingScope(normalizedType);
+  setBookingTypeButtons(normalizedType);
+  setBookingIntent(normalizedType);
+}
+
+function syncBookingUiFromInput() {
+  if (!bookingType) {
+    return;
+  }
+
+  applyBookingUi(bookingType.value || "table");
+}
+
 if (bookingType) {
-  const activeType = bookingType.value || "table";
-  setBookingScope(activeType);
-  setBookingTypeButtons(activeType);
-  setBookingIntent(activeType);
+  applyBookingUi(bookingType.value || "table");
+
   ["change", "input"].forEach((eventName) => {
-    bookingType.addEventListener(eventName, () => {
-      const nextType = bookingType.value || "table";
-      setBookingScope(nextType);
-      setBookingTypeButtons(nextType);
-      setBookingIntent(nextType);
-    });
+    bookingType.addEventListener(eventName, syncBookingUiFromInput);
   });
 }
 
@@ -293,9 +327,7 @@ if (bookingType && bookingTypeBtns.length) {
       }
 
       bookingType.value = nextType;
-      setBookingScope(nextType);
-      setBookingTypeButtons(nextType);
-      setBookingIntent(nextType);
+      applyBookingUi(nextType);
       bookingType.dispatchEvent(new Event("change", { bubbles: true }));
     });
   });
@@ -316,12 +348,7 @@ if (bookingForm && bookingStatus) {
           : "Thank you. Your table booking request has been sent to the restaurant team.";
 
         bookingForm.reset();
-        if (bookingType) {
-          const resetType = bookingType.value || "table";
-          setBookingScope(resetType);
-          setBookingTypeButtons(resetType);
-          setBookingIntent(resetType);
-        }
+        syncBookingUiFromInput();
         return;
       }
 
@@ -331,12 +358,7 @@ if (bookingForm && bookingStatus) {
         : "Booking request received. Email delivery is not configured yet, but your request was saved.";
 
       bookingForm.reset();
-      if (bookingType) {
-        const resetType = bookingType.value || "table";
-        setBookingScope(resetType);
-        setBookingTypeButtons(resetType);
-        setBookingIntent(resetType);
-      }
+      syncBookingUiFromInput();
     } catch (error) {
       const fallbackMessage = [
         "New Booking Request",
@@ -372,12 +394,147 @@ function initFooterYear() {
   });
 }
 
+function getSlideImageNode(target) {
+  if (!target) {
+    return null;
+  }
+
+  if (target.tagName === "IMG") {
+    return target;
+  }
+
+  return target.querySelector("img");
+}
+
+function hydrateDeferredImage(target) {
+  const image = getSlideImageNode(target);
+  if (!image) {
+    return;
+  }
+
+  const deferredSrc = (image.dataset.src || "").trim();
+  if (!deferredSrc) {
+    return;
+  }
+
+  if (image.getAttribute("src") !== deferredSrc) {
+    image.setAttribute("src", deferredSrc);
+  }
+}
+
+function preloadDeferredImages() {
+  const deferredSources = [...new Set(
+    [...document.querySelectorAll("img[data-src]")]
+      .map((image) => (image.dataset.src || "").trim())
+      .filter(Boolean)
+  )];
+
+  if (!deferredSources.length) {
+    return;
+  }
+
+  const queue = deferredSources.slice(0, 14);
+  let index = 0;
+
+  const warmNextBatch = () => {
+    const end = Math.min(index + 2, queue.length);
+    while (index < end) {
+      const src = queue[index];
+      const image = new Image();
+      image.decoding = "async";
+      image.src = src;
+      index += 1;
+    }
+
+    if (index < queue.length) {
+      scheduleIdle(warmNextBatch, 550);
+    }
+  };
+
+  scheduleIdle(warmNextBatch, 350);
+}
+
+function setImageLoadingPriority(target, priority) {
+  const image = getSlideImageNode(target);
+  if (!image) {
+    return;
+  }
+
+  image.setAttribute("decoding", "async");
+
+  if (priority === "high") {
+    image.setAttribute("loading", "eager");
+    image.fetchPriority = "high";
+    return;
+  }
+
+  image.setAttribute("loading", "lazy");
+  image.fetchPriority = "low";
+}
+
+function initImageDelivery() {
+  const allImages = [...document.querySelectorAll("img")];
+  if (!allImages.length) {
+    return;
+  }
+
+  const logos = new Set([
+    ...document.querySelectorAll(".brand-logo")
+  ]);
+
+  allImages.forEach((image) => {
+    if (!image.hasAttribute("decoding")) {
+      image.setAttribute("decoding", "async");
+    }
+
+    if (logos.has(image)) {
+      image.setAttribute("loading", "eager");
+      image.fetchPriority = "high";
+      return;
+    }
+
+    if (!image.hasAttribute("loading")) {
+      image.setAttribute("loading", "lazy");
+    }
+  });
+}
+
+function initImageFallbacks() {
+  const allImages = [...document.querySelectorAll("img")];
+  if (!allImages.length) {
+    return;
+  }
+
+  allImages.forEach((image) => {
+    image.addEventListener("error", () => {
+      const fallbackSrc = (image.dataset.fallbackSrc || "assets/images/hero.svg").trim();
+      if (!fallbackSrc || image.dataset.fallbackApplied === "true") {
+        return;
+      }
+
+      image.dataset.fallbackApplied = "true";
+      image.setAttribute("src", fallbackSrc);
+      if (image.dataset.src) {
+        image.dataset.src = fallbackSrc;
+      }
+    });
+  });
+}
+
 function initRevealAnimations() {
   const targets = [
     ...document.querySelectorAll(".section, .media-slider, .story-photo, .event-image, .contact-meta, .contact-form-modern, .footer-top, .footer-bottom")
   ];
 
   if (!targets.length) {
+    return;
+  }
+
+  if (prefersReducedMotion) {
+    targets.forEach((target) => {
+      target.classList.add("reveal", "is-visible");
+      target.style.transitionDelay = "0ms";
+    });
     return;
   }
 
@@ -422,6 +579,13 @@ function initMediaSliders() {
       slides[0].classList.add("is-active");
     }
 
+    slides.forEach((slide) => {
+      setImageLoadingPriority(slide, "low");
+    });
+    hydrateDeferredImage(slides[current]);
+    setImageLoadingPriority(slides[current], "high");
+    hydrateDeferredImage(slides[(current + 1) % slides.length]);
+
     let dots = [];
     if (dotsRoot) {
       dotsRoot.innerHTML = slides
@@ -433,7 +597,12 @@ function initMediaSliders() {
 
     const setActive = (nextIndex) => {
       slides[current].classList.remove("is-active");
+      setImageLoadingPriority(slides[current], "low");
+
+      hydrateDeferredImage(slides[nextIndex]);
       slides[nextIndex].classList.add("is-active");
+      setImageLoadingPriority(slides[nextIndex], "high");
+      hydrateDeferredImage(slides[(nextIndex + 1) % slides.length]);
 
       if (dots.length) {
         dots[current].classList.remove("is-active");
@@ -450,6 +619,7 @@ function initMediaSliders() {
 
     const intervalMs = Number(slider.dataset.interval) || 2600;
     let timer = null;
+    let isVisibleInViewport = true;
 
     const stop = () => {
       if (timer) {
@@ -459,7 +629,7 @@ function initMediaSliders() {
     };
 
     const start = () => {
-      if (slides.length > 1 && !timer) {
+      if (slides.length > 1 && !timer && isVisibleInViewport && !document.hidden) {
         timer = setInterval(nextSlide, intervalMs);
       }
     };
@@ -482,7 +652,34 @@ function initMediaSliders() {
     slider.addEventListener("touchstart", stop, { passive: true });
     slider.addEventListener("touchend", start);
 
-    start();
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isVisibleInViewport = entry.isIntersecting;
+            if (isVisibleInViewport) {
+              start();
+              return;
+            }
+
+            stop();
+          });
+        },
+        { threshold: 0.12 }
+      );
+      observer.observe(slider);
+    } else {
+      start();
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        stop();
+        return;
+      }
+
+      start();
+    });
   });
 }
 
@@ -494,16 +691,39 @@ function initHeroAwareHeader() {
     return;
   }
 
-  const updateState = () => {
-    const cutoff = hero.offsetTop + hero.offsetHeight - header.offsetHeight;
-    const overHero = window.scrollY <= cutoff;
-    header.classList.toggle("is-over-hero", overHero);
-    header.classList.toggle("is-glass", !overHero);
+  let cutoff = 0;
+  const returnNavTrigger = 140;
+
+  const updateCutoff = () => {
+    cutoff = hero.offsetTop + hero.offsetHeight - header.offsetHeight;
   };
 
+  const applyHeaderState = () => {
+    const currentY = window.scrollY;
+    const overHero = currentY <= cutoff;
+    header.classList.toggle("is-over-hero", overHero);
+    header.classList.toggle("is-glass", !overHero);
+
+    header.classList.toggle("show-return-nav", currentY > returnNavTrigger);
+  };
+
+  const updateState = () => {
+    applyHeaderState();
+  };
+
+  const updateStateThrottled = rafThrottle(() => {
+    applyHeaderState();
+  });
+
+  const recomputeAndUpdate = rafThrottle(() => {
+    updateCutoff();
+    updateStateThrottled();
+  });
+
+  updateCutoff();
   updateState();
-  window.addEventListener("scroll", updateState, { passive: true });
-  window.addEventListener("resize", updateState);
+  window.addEventListener("scroll", updateStateThrottled, { passive: true });
+  window.addEventListener("resize", recomputeAndUpdate);
 }
 
 function initHeroSlider() {
@@ -511,6 +731,23 @@ function initHeroSlider() {
   const heading = document.getElementById("hero-heading");
   const lead = document.getElementById("hero-lead");
   if (slides.length < 2) {
+    return;
+  }
+
+  let current = slides.findIndex((slide) => slide.classList.contains("is-active"));
+  if (current < 0) {
+    current = 0;
+    slides[0].classList.add("is-active");
+  }
+
+  slides.forEach((slide) => {
+    setImageLoadingPriority(slide, "low");
+  });
+  hydrateDeferredImage(slides[current]);
+  setImageLoadingPriority(slides[current], "high");
+  hydrateDeferredImage(slides[(current + 1) % slides.length]);
+
+  if (document.body.classList.contains("hero-static")) {
     return;
   }
 
@@ -557,19 +794,23 @@ function initHeroSlider() {
     }, 220);
   };
 
-  let current = 0;
   const slideDurationMs = 3200;
   const transitionMs = 520;
+  let timer = null;
 
-  setInterval(() => {
+  const runNext = () => {
     const currentSlide = slides[current];
     const next = (current + 1) % slides.length;
     const nextSlide = slides[next];
 
+    setImageLoadingPriority(currentSlide, "low");
+    hydrateDeferredImage(nextSlide);
     currentSlide.classList.remove("is-active");
     currentSlide.classList.add("is-leaving");
     nextSlide.classList.add("is-active");
     nextSlide.classList.remove("is-leaving");
+    setImageLoadingPriority(nextSlide, "high");
+    hydrateDeferredImage(slides[(next + 1) % slides.length]);
 
     setTimeout(() => {
       currentSlide.classList.remove("is-leaving");
@@ -577,7 +818,30 @@ function initHeroSlider() {
 
     applyHeroCopy(next);
     current = next;
-  }, slideDurationMs);
+  };
+
+  const stop = () => {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  };
+
+  const start = () => {
+    if (!timer && !document.hidden) {
+      timer = setInterval(runNext, slideDurationMs);
+    }
+  };
+
+  start();
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stop();
+      return;
+    }
+
+    start();
+  });
 }
 
 function mountWhatsAppWidget() {
@@ -694,7 +958,14 @@ function mountWhatsAppWidget() {
   });
 }
 
-mountWhatsAppWidget();
+function initWhatsAppWidget() {
+  scheduleIdle(() => mountWhatsAppWidget(), 1200);
+}
+
+initWhatsAppWidget();
+initImageDelivery();
+initImageFallbacks();
+preloadDeferredImages();
 initHeroSlider();
 initHeroAwareHeader();
 initFooterYear();

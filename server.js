@@ -7,6 +7,8 @@ require("dotenv").config();
 const app = express();
 const PORT = Number(process.env.PORT) || 8080;
 const SUBMISSIONS_LOG = path.join(__dirname, "submissions.log");
+const ASSET_CACHE_MS = 1000 * 60 * 60 * 24 * 30;
+const STATIC_CACHE_MS = 1000 * 60 * 60;
 
 const CLEAN_ROUTE_TO_FILE = {
   "/": "index.html",
@@ -200,7 +202,21 @@ Object.entries(CLEAN_ROUTE_TO_FILE).forEach(([cleanRoute, fileName]) => {
   });
 });
 
-app.use(express.static(__dirname));
+app.use("/assets", express.static(path.join(__dirname, "assets"), {
+  etag: true,
+  immutable: true,
+  maxAge: ASSET_CACHE_MS
+}));
+
+app.use(express.static(__dirname, {
+  etag: true,
+  maxAge: STATIC_CACHE_MS,
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith(".html")) {
+      res.setHeader("Cache-Control", "no-cache");
+    }
+  }
+}));
 
 app.listen(PORT, () => {
   const mailStatus = transporter ? "enabled" : "disabled (configure SMTP env vars)";

@@ -11,22 +11,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="preconnect" href="https://images.pexels.com" crossorigin>
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=72" imagesrcset="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=900&q=68 900w, https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=72 1400w" imagesizes="100vw">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=70">
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="page-events">
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="/" aria-label="Afrish Petals home">
-        <img class="brand-logo" src="assets/logos/Afrish_Petals_logo-removebg-preview.png" alt="Afrish Petals logo">
-        <span class="brand-text">Afrish Petals</span>
-      </a>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
       <nav id="main-nav" class="main-nav">
-        <a href="/">Home</a>
-        <a class="active" href="/events">Events</a>
-        <a href="/booking">Booking</a>
-        <a href="/contact">Contact</a>
+        <div class="main-nav-group main-nav-left">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link active" href="/events">Events</a>
+        </div>
+        <a class="brand" href="/" aria-label="Afrish Petals home">
+          <img class="brand-logo" src="assets/logos/Afrish_Petals_logo-removebg-preview.png" alt="Afrish Petals logo">
+        </a>
+        <div class="main-nav-group main-nav-right">
+          <a class="nav-link" href="/booking">Booking</a>
+          <a class="nav-link" href="/contact">Contact</a>
+        </div>
       </nav>
       <a class="nav-book" href="https://afrishpetals.rw" target="_blank" rel="noopener noreferrer">View Menu</a>
     </div>
@@ -48,28 +52,28 @@
         <div class="media-slider reveal" data-slider data-interval="2500">
           <div class="media-track">
             <figure class="media-slide is-active">
-              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80" alt="Wedding reception setup">
+              <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=70" alt="Wedding reception setup" loading="eager" decoding="async">
               <figcaption class="media-caption">
                 <h3>Wedding Receptions</h3>
                 <p>Elegant setup, smooth coordination, and memorable guest flow.</p>
               </figcaption>
             </figure>
             <figure class="media-slide billiard-slide">
-              <img src="assets/images/billiard.jpg" alt="Black man aiming a shot on a billiard table in a premium lounge">
+              <img src="assets/images/hero.svg" data-src="assets/images/billiard.jpg" alt="Black man aiming a shot on a billiard table in a premium lounge" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Billiard Lounge Experience</h3>
                 <p>Add social energy to your event with a stylish billiard corner.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1600&q=80" alt="Corporate dinner service">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=1200&q=70" alt="Corporate dinner service" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Corporate Events</h3>
                 <p>Professional hosting for dinners, launches, and networking nights.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=80" alt="Outdoor event atmosphere">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=70" alt="Outdoor event atmosphere" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Outdoor Celebrations</h3>
                 <p>Open-air atmosphere with refined service execution.</p>
@@ -120,21 +124,21 @@
         <div class="media-slider event-capacity-slider reveal" data-slider data-interval="2300">
           <div class="media-track short">
             <figure class="media-slide is-active">
-              <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1400&q=80" alt="Event venue arrangement with premium table setup">
+              <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1100&q=70" alt="Event venue arrangement with premium table setup" loading="eager" decoding="async">
               <figcaption class="media-caption">
                 <h3>Premium Event Setup</h3>
                 <p>Flexible layout for receptions, dinners, and private celebrations.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1400&q=80" alt="DJ performance with mixing deck and lights" onerror="this.onerror=null;this.src='assets/images/event-dj.svg';">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1100&q=70" alt="DJ performance with mixing deck and lights" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/event-dj.svg';">
               <figcaption class="media-caption">
                 <h3>Live DJ Experience</h3>
                 <p>Professional DJ setup to energize your event atmosphere.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1400&q=80" alt="Concert-style sound speakers and lighting system" onerror="this.onerror=null;this.src='assets/images/event-sound.svg';">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1100&q=70" alt="Concert-style sound speakers and lighting system" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/images/event-sound.svg';">
               <figcaption class="media-caption">
                 <h3>Sound & Lighting</h3>
                 <p>Clear audio coverage and immersive lighting for every moment.</p>
@@ -211,6 +215,7 @@
   <script src="app.js" defer></script>
 </body>
 </html>
+
 
 
 

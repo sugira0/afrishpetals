@@ -11,22 +11,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <link rel="preconnect" href="https://images.pexels.com" crossorigin>
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1280&q=70" imagesrcset="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=860&q=68 860w, https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1280&q=70 1280w" imagesizes="100vw">
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-home">
+<body class="page-home hero-static">
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="/" aria-label="Afrish Petals home">
-        <img class="brand-logo" src="assets/logos/Afrish_Petals_logo-removebg-preview.png" alt="Afrish Petals logo">
-        <span class="brand-text">Afrish Petals</span>
-      </a>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
       <nav id="main-nav" class="main-nav">
-        <a class="active" href="/">Home</a>
-        <a href="/events">Events</a>
-        <a href="/booking">Booking</a>
-        <a href="/contact">Contact</a>
+        <div class="main-nav-group main-nav-left">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/events">Events</a>
+        </div>
+        <a class="brand" href="/" aria-label="Afrish Petals home">
+          <img class="brand-logo" src="assets/logos/Afrish_Petals_logo-removebg-preview.png" alt="Afrish Petals logo">
+        </a>
+        <div class="main-nav-group main-nav-right">
+          <a class="nav-link" href="/booking">Booking</a>
+          <a class="nav-link" href="/contact">Contact</a>
+        </div>
       </nav>
       <a class="nav-book" href="https://afrishpetals.rw" target="_blank" rel="noopener noreferrer">View Menu</a>
     </div>
@@ -35,10 +38,10 @@
   <main>
     <section class="hero home-hero">
       <div class="hero-slider" aria-hidden="true">
-        <img class="hero-slide is-active" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80" alt="">
-        <img class="hero-slide billiard-hero-slide" src="assets/images/billiard.jpg" alt="">
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1800&q=80" alt="">
-        <img class="hero-slide" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1800&q=80" alt="">
+        <img class="hero-slide is-active" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1280&q=70" alt="" loading="eager" fetchpriority="high" decoding="async">
+        <img class="hero-slide billiard-hero-slide" src="assets/images/hero.svg" data-src="assets/images/billiard.jpg" alt="" loading="lazy" decoding="async">
+        <img class="hero-slide" src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1280&q=70" alt="" loading="lazy" decoding="async">
+        <img class="hero-slide" src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1280&q=70" alt="" loading="lazy" decoding="async">
       </div>
       <div class="hero-layer" aria-hidden="true"></div>
 
@@ -55,19 +58,26 @@
       </div>
     </section>
 
-    <section class="section amenities-home-section">
-      <div class="container amenities-home-wrap">
-        <p class="kicker accent">Amenities</p>
-        <h2>Everything you need in one destination.</h2>
-        <div class="amenity-grid home-amenity-grid" aria-label="Amenities at Afrish Petals">
-          <span class="amenity-chip">Free Wi-Fi</span>
-          <span class="amenity-chip">Coffee Shop</span>
-          <span class="amenity-chip">Poolside Lounge</span>
-          <span class="amenity-chip">Bar (Beer)</span>
-          <span class="amenity-chip">Billiard Table</span>
+    <div class="container amenities-offer-strip" aria-label="Amenities at Afrish Petals">
+      <div class="amenities-offer-marquee">
+        <div class="amenities-offer-scroll">
+          <div class="amenities-offer-row">
+            <span class="amenity-chip amenity-offer-btn">Free Wi-Fi</span>
+            <span class="amenity-chip amenity-offer-btn">Coffee Shop</span>
+            <span class="amenity-chip amenity-offer-btn">Poolside Lounge</span>
+            <span class="amenity-chip amenity-offer-btn">Bar (Beer)</span>
+            <span class="amenity-chip amenity-offer-btn">Billiard Table</span>
+          </div>
+          <div class="amenities-offer-row" aria-hidden="true">
+            <span class="amenity-chip amenity-offer-btn">Free Wi-Fi</span>
+            <span class="amenity-chip amenity-offer-btn">Coffee Shop</span>
+            <span class="amenity-chip amenity-offer-btn">Poolside Lounge</span>
+            <span class="amenity-chip amenity-offer-btn">Bar (Beer)</span>
+            <span class="amenity-chip amenity-offer-btn">Billiard Table</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <section class="section photo-flow">
       <div class="container">
@@ -76,28 +86,28 @@
         <div class="media-slider reveal" data-slider data-interval="2500">
           <div class="media-track">
             <figure class="media-slide is-active">
-              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80" alt="Elegant indoor dining area">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=70" alt="Elegant indoor dining area" loading="eager" decoding="async">
               <figcaption class="media-caption">
                 <h3>Indoor Signature Dining</h3>
                 <p>Elegant table service in a warm, premium atmosphere.</p>
               </figcaption>
             </figure>
             <figure class="media-slide billiard-slide">
-              <img src="assets/images/billiard.jpg" alt="Black man aiming a shot on a billiard table">
+              <img src="assets/images/hero.svg" data-src="assets/images/billiard.jpg" alt="Black man aiming a shot on a billiard table" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Billiard Lounge Moments</h3>
                 <p>Competitive energy and premium lounge comfort in one space.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1600&q=80" alt="Guests enjoying dining service">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1200&q=70" alt="Guests enjoying dining service" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Guest-Centered Hospitality</h3>
                 <p>Refined service that balances comfort and sophistication.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80" alt="Restaurant service and ambiance">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=70" alt="Restaurant service and ambiance" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Rwandan Culinary Experience</h3>
                 <p>Local inspiration elevated through modern presentation.</p>
@@ -120,7 +130,7 @@
           <p class="story-comment-body">We partner with trusted local suppliers to ensure freshness, seasonality, and quality. Every plate and event is designed with intention, warmth, and modern luxury in mind.</p>
         </div>
         <figure class="story-photo">
-          <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=80" alt="Restaurant team preparing service">
+          <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1100&q=70" alt="Restaurant team preparing service" loading="lazy" decoding="async">
         </figure>
       </div>
     </section>
@@ -130,28 +140,28 @@
         <div class="media-slider reveal" data-slider data-interval="2400">
           <div class="media-track short">
             <figure class="media-slide is-active">
-              <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80" alt="Dining table presentation">
+              <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=70" alt="Dining table presentation" loading="eager" decoding="async">
               <figcaption class="media-caption">
                 <h3>Private Dining Moments</h3>
                 <p>Tailored experiences for family and corporate guests.</p>
               </figcaption>
             </figure>
             <figure class="media-slide billiard-slide">
-              <img src="assets/images/billiard.jpg" alt="Black man aiming a shot on a billiard table in a stylish lounge">
+              <img src="assets/images/hero.svg" data-src="assets/images/billiard.jpg" alt="Black man aiming a shot on a billiard table in a stylish lounge" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Billiard Social Nights</h3>
                 <p>From casual hangouts to events, our billiard space stays vibrant.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1600&q=80" alt="Poolside event service">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=1200&q=70" alt="Poolside event service" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Poolside Ambience</h3>
                 <p>Open-air elegance with thoughtful, attentive service.</p>
               </figcaption>
             </figure>
             <figure class="media-slide">
-              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80" alt="Signature restaurant dishes">
+              <img src="assets/images/hero.svg" data-src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=70" alt="Signature restaurant dishes" loading="lazy" decoding="async">
               <figcaption class="media-caption">
                 <h3>Signature Cuisine</h3>
                 <p>Distinctive flavor combinations rooted in local identity.</p>
