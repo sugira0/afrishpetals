@@ -1,0 +1,153 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <link rel="icon" type="image/png" href="assets/logos/Afrish_Petals_logo-removebg-preview.png">
+  <link rel="apple-touch-icon" href="assets/logos/Afrish_Petals_logo-removebg-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #f0eadf, #fdf9f0);
+      color: #1d1d1d;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      padding: 1rem;
+    }
+
+    .card {
+      width: min(640px, 100%);
+      background: #fffdf8;
+      border: 1px solid #e7dfd2;
+      border-radius: 18px;
+      padding: 1rem;
+      box-shadow: 0 12px 28px rgba(24, 20, 12, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Bodoni Moda", serif;
+      font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+    }
+
+    p {
+      color: #5d5a53;
+    }
+
+    label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid #d8cebf;
+      border-radius: 12px;
+      padding: 0.7rem 0.8rem;
+      font: inherit;
+      margin-bottom: 0.8rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    button, a {
+      border: 0;
+      border-radius: 12px;
+      background: #c35f2d;
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      padding: 0.6rem 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a[aria-disabled="true"] {
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .preview {
+      display: grid;
+      place-items: center;
+      background: #f6f0e7;
+      border: 1px dashed #ccbba4;
+      border-radius: 14px;
+      min-height: 330px;
+      padding: 0.9rem;
+    }
+
+    img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid #ece5d8;
+    }
+  </style>
+</head>
+<body>
+  <section class="card">
+    <h1>Restaurant QR Code</h1>
+    <p>Paste your live website URL and generate a printable QR code.</p>
+
+    <label for="menu-url">Website URL</label>
+    <input id="menu-url" type="url" placeholder="https://your-restaurant-website-url.com">
+
+    <div class="actions">
+      <button id="generate" type="button">Generate QR</button>
+      <a id="download" aria-disabled="true">Download PNG</a>
+    </div>
+
+    <div class="preview">
+      <img id="qr-image" alt="Generated QR code will appear here.">
+    </div>
+  </section>
+
+  <script>
+    const generateButton = document.getElementById("generate");
+    const downloadLink = document.getElementById("download");
+    const menuUrlInput = document.getElementById("menu-url");
+    const qrImage = document.getElementById("qr-image");
+
+    function setDownloadEnabled(enabled) {
+      downloadLink.setAttribute("aria-disabled", String(!enabled));
+    }
+
+    generateButton.addEventListener("click", () => {
+      const menuUrl = menuUrlInput.value.trim();
+      if (!menuUrl) {
+        alert("Please enter your menu URL first.");
+        return;
+      }
+
+      const encoded = encodeURIComponent(menuUrl);
+      const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&data=${encoded}`;
+
+      qrImage.src = qrUrl;
+      downloadLink.href = qrUrl;
+      downloadLink.download = "restaurant-menu-qr.png";
+      setDownloadEnabled(true);
+    });
+  </script>
+</body>
+</html>
+
+
