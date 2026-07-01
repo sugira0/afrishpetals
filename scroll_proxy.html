@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* { margin:0; padding:0; }
+html, body { width:1400px; height:900px; overflow:hidden; }
+iframe { border:none; width:1400px; height:900px; }
+</style>
+<script>
+const params = new URLSearchParams(location.search);
+const scrollY = parseInt(params.get('y') || '0');
+window.addEventListener('message', () => {});
+function init() {
+  const frame = document.getElementById('f');
+  frame.contentWindow.scrollTo({top: scrollY, behavior: 'instant'});
+}
+</script>
+</head>
+<body>
+<iframe id="f" src="/" onload="init()"></iframe>
+</body>
+</html>

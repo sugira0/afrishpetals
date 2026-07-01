@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Afrish Petals</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    .page-hero {
+      height: 52vh;
+      min-height: 380px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      background: url('images/afrish-main.jpg') center/cover no-repeat;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.85) 100%);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 2rem 4rem;
+    }
+
+    .page-hero-content .section-label {
+      margin-bottom: 0.6rem;
+    }
+
+    .page-hero-content h1 {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+
+    .page-hero-content h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .gallery-full {
+      padding: 6rem 0 8rem;
+      background: var(--black2);
+    }
+
+    .gallery-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .gallery-full-grid .gallery-item {
+      height: 300px;
+    }
+
+    .gallery-full-grid .gallery-item.tall {
+      height: 610px;
+      grid-row: span 2;
+    }
+
+    .gallery-full-grid .gallery-item.wide {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-full-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-full-grid .gallery-item.tall {
+        grid-row: unset;
+        height: 300px;
+      }
+
+      .gallery-full-grid .gallery-item.wide {
+        grid-column: unset;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .gallery-full-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-full-grid .gallery-item {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Logo watermark -->
+  <div class="logo-watermark" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Afrish Petals" class="nav-logo-img" />
+        <span class="logo-text">Afrish Petals</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">Our Story</a></li>
+        <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">The Menu</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="gallery.html" style="color:var(--gold)">Gallery</a></li>
+        <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+        <li><a href="index.html#reserve" class="nav-cta">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <p class="section-label">Visual Story</p>
+      <h1>A Feast for <em>the Eyes</em></h1>
+    </div>
+  </div>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-full">
+    <div class="container">
+      <div class="gallery-full-grid">
+        <div class="gallery-item tall reveal"><img src="images/afrish-main.jpg" alt="Afrish Petals restaurant"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>The Restaurant</span></div>
+        </div>
+        <div class="gallery-item reveal"><img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Tasting Menu"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>Tasting Menu</span></div>
+        </div>
+        <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80"
+            alt="Craft Cocktails" loading="lazy" />
+          <div class="gallery-overlay"><span>Craft Cocktails</span></div>
+        </div>
+        <div class="gallery-item wide reveal"><img src="images/afrish-view1.jpg" alt="Afrish Petals dining room"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>The Dining Room</span></div>
+        </div>
+        <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=600&q=80"
+            alt="Malva Soufflé" loading="lazy" />
+          <div class="gallery-overlay"><span>Malva Soufflé</span></div>
+        </div>
+        <div class="gallery-item reveal"><img src="images/afrish-view2.jpg" alt="Afrish Petals interior"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>The Interior</span></div>
+        </div>
+        <div class="gallery-item reveal"><img src="images/afrish-view3.jpg" alt="Afrish Petals ambience"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>Chef Plating</span></div>
+        </div>
+        <div class="gallery-item reveal"><img
+            src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="Intimate Dining"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>Intimate Dining</span></div>
+        </div>
+        <div class="gallery-item reveal"><img
+            src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80" alt="The Ambience"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>The Ambience</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo large">
+          <img src="logo.png" alt="Afrish Petals" class="nav-logo-img" />
+          <span class="logo-text">Afrish Petals</span>
+        </a>
+        <p>Fine African Fusion Dining<br>Executive Suite Building, KN 063 St<br>Near Norssken, Kigali, Rwanda</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/afrishpetals/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">The Menu</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html#reserve">Reservations</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Dining</h4>
+        <ul>
+          <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">Tasting Menu</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Chef's Table</a></li>
+          <li><a href="#">Wine Cellar</a></li>
+          <li><a href="#">Gift Vouchers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Visit</h4>
+        <ul>
+          <li><span>Tue – Sun: 6 pm – 11 pm</span></li>
+          <li><span>+250 784 869 980</span></li>
+          <li><span>reservations@afrishpetals.rw</span></li>
+          <li><span>KN 063 St, Kigali, Rwanda</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Afrish Petals. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Widget -->
+  <div class="wa-widget" id="waWidget">
+    <div class="wa-popup" id="waPopup">
+      <div class="wa-popup-header">
+        <div class="wa-avatar">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+          </svg>
+        </div>
+        <div class="wa-popup-info">
+          <strong>Afrish Petals</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" id="waClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="wa-popup-body">
+        <div class="wa-message">
+          <p>Hello! Welcome to <strong>Afrish Petals</strong>.<br>Choose who you'd like to chat with:</p>
+        </div>
+        <div class="wa-contacts">
+          <a class="wa-contact"
+            href="https://wa.me/250784869980?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Afrish%20Petals."
+            target="_blank" rel="noopener">
+            <div class="wa-contact-avatar">AP</div>
+            <div class="wa-contact-info"><strong>Restaurant Owner</strong><span>Reservations &amp; Private Dining</span>
+            </div>
+            <svg class="wa-contact-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+          </a>
+          <a class="wa-contact"
+            href="https://wa.me/250786666111?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Afrish%20Petals."
+            target="_blank" rel="noopener">
+            <div class="wa-contact-avatar sm">SM</div>
+            <div class="wa-contact-info"><strong>Systems Manager</strong><span>Technical &amp; General Support</span>
+            </div>
+            <svg class="wa-contact-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <button class="wa-fab" id="waFab" aria-label="Chat on WhatsApp">
+      <svg class="wa-fab-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+      </svg>
+      <span class="wa-fab-label">Chat with us</span>
+      <span class="wa-pulse"></span>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

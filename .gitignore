@@ -1,0 +1,12 @@
+# Original large media files — use the converted versions instead
+images/*.HEIC
+images/*.MOV
+images/interior.mp4
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.claude/

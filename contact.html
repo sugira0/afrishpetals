@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Afrish Petals</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ---- Page hero ---- */
+    .page-hero {
+      height: 52vh;
+      min-height: 360px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      overflow: hidden;
+      background: url('images/afrish-view3.jpg') center/cover no-repeat;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10, 10, 10, 0.45) 0%, rgba(10, 10, 10, 0.88) 100%);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 2rem 4rem;
+    }
+
+    .page-hero-content .section-label {
+      margin-bottom: 0.6rem;
+    }
+
+    .page-hero-content h1 {
+      font-family: var(--ff-serif);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+
+    .page-hero-content h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ---- Contact section ---- */
+    .contact-section {
+      padding: 7rem 0 8rem;
+      background: var(--black2);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    /* Info side */
+    .contact-info-side>p {
+      font-size: 0.93rem;
+      color: rgba(245, 240, 232, 0.6);
+      line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+
+    .info-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 560px) {
+      .info-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .info-card {
+      background: rgba(245, 240, 232, 0.03);
+      border: 1px solid var(--border);
+      padding: 1.6rem 1.4rem;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .info-card:hover {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.04);
+    }
+
+    .info-card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--border);
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .info-card-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .info-card strong {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.45rem;
+    }
+
+    .info-card span,
+    .info-card a {
+      font-size: 0.9rem;
+      color: rgba(245, 240, 232, 0.6);
+      line-height: 1.6;
+      display: block;
+    }
+
+    .info-card a:hover {
+      color: var(--gold);
+    }
+
+    /* Map */
+    .map-wrap {
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .map-static-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .map-static-placeholder {
+      width: 100%;
+      height: 100%;
+      background: rgba(201, 168, 76, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      text-align: center;
+      padding: 1.5rem;
+      transition: background 0.3s;
+    }
+
+    .map-static-link:hover .map-static-placeholder {
+      background: rgba(201, 168, 76, 0.09);
+    }
+
+    .map-static-placeholder svg {
+      width: 32px;
+      height: 32px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .map-static-placeholder span {
+      font-size: 0.88rem;
+      color: rgba(245, 240, 232, 0.65);
+      line-height: 1.6;
+    }
+
+    .map-static-placeholder small {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Form side */
+    .contact-form-side .section-label {
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-form-side h2 {
+      margin-bottom: 1rem;
+    }
+
+    .contact-form-side>p {
+      font-size: 0.9rem;
+      color: rgba(245, 240, 232, 0.55);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .contact-form {
+      background: rgba(245, 240, 232, 0.03);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      position: relative;
+    }
+
+    .contact-form::before,
+    .contact-form::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-style: solid;
+      border-color: var(--gold);
+      opacity: 0.45;
+      transition: width 0.4s var(--ease-out), height 0.4s, opacity 0.4s;
+    }
+
+    .contact-form::before {
+      top: -1px;
+      right: -1px;
+      border-width: 1px 1px 0 0;
+    }
+
+    .contact-form::after {
+      bottom: -1px;
+      left: -1px;
+      border-width: 0 0 1px 1px;
+    }
+
+    .contact-form:hover::before,
+    .contact-form:hover::after {
+      width: 36px;
+      height: 36px;
+      opacity: 0.8;
+    }
+
+    .contact-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 560px) {
+      .contact-form .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-form .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .contact-form .form-group.full {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 560px) {
+      .contact-form .form-group.full {
+        grid-column: 1;
+      }
+    }
+
+    .contact-form label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, 0.5);
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      background: rgba(245, 240, 232, 0.04);
+      border: 1px solid rgba(201, 168, 76, 0.2);
+      color: var(--cream);
+      font-family: var(--ff-sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      background: rgba(201, 168, 76, 0.04);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(245, 240, 232, 0.25);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .contact-form select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .contact-form select option {
+      background: var(--black3);
+    }
+
+    .contact-submit-row {
+      margin-top: 1.2rem;
+    }
+
+    .contact-success {
+      display: none;
+      margin-top: 1.2rem;
+      padding: 1rem 1.2rem;
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--gold);
+      font-size: 0.88rem;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-success.visible {
+      display: flex;
+      animation: fadeIn 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Logo watermark -->
+  <div class="logo-watermark" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Afrish Petals" class="nav-logo-img" />
+        <span class="logo-text">Afrish Petals</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">Our Story</a></li>
+        <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">The Menu</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="gallery.html" target="_blank" rel="noopener">Gallery</a></li>
+        <li><a href="contact.html" style="color:var(--gold)">Contact</a></li>
+        <li><a href="index.html#reserve" class="nav-cta">Reserve a Table</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <p class="section-label">Get in Touch</p>
+      <h1>Contact <em>Us</em></h1>
+    </div>
+  </div>
+
+  <!-- Contact Content -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Info side -->
+        <div class="contact-info-side reveal-left">
+          <p class="section-label">Find Us</p>
+          <h2 class="section-title">We'd Love to<br><em>Hear from You</em></h2>
+          <div class="title-rule"></div>
+          <p>Whether you're planning a special occasion, have a question about our menu, or simply want to say hello —
+            our team is here and happy to help. Reach out through any of the channels below.</p>
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <strong>Address</strong>
+              <span>Executive Suite Building<br>KN 063 St, Near Norssken<br>Kigali, Rwanda</span>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <strong>Hours</strong>
+              <span>Tuesday – Sunday<br>6:00 pm – 11:00 pm<br>Closed Mondays</span>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.08-1.08a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <strong>Phone</strong>
+              <a href="tel:+250784869980">+250 784 869 980</a>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </div>
+              <strong>Email</strong>
+              <a href="mailto:reservations@afrishpetals.rw">reservations@afrishpetals.rw</a>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div class="map-wrap">
+            <a href="https://maps.google.com/?q=Executive+Suite+Building+KN+063+St+Kigali+Rwanda" target="_blank"
+              rel="noopener" class="map-static-link" aria-label="View on Google Maps">
+              <div class="map-static-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Executive Suite Building, KN 063 St<br>Near Norssken, Kigali, Rwanda</span>
+                <small>Open in Google Maps ↗</small>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form side -->
+        <div class="contact-form-side reveal-right">
+          <p class="section-label">Send a Message</p>
+          <h2 class="section-title">Drop Us a<br><em>Note</em></h2>
+          <div class="title-rule"></div>
+          <p>For general enquiries, event bookings, press, or partnerships — fill in the form and we'll get back to you
+            within 24 hours.</p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-name">Full Name</label>
+                <input type="text" id="c-name" name="name" placeholder="Amara Osei" required />
+              </div>
+              <div class="form-group">
+                <label for="c-email">Email Address</label>
+                <input type="email" id="c-email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="c-phone">Phone (optional)</label>
+                <input type="tel" id="c-phone" name="phone" placeholder="+250 784 869 980" />
+              </div>
+              <div class="form-group">
+                <label for="c-subject">Subject</label>
+                <select id="c-subject" name="subject" required>
+                  <option value="">Select a subject</option>
+                  <option>General Enquiry</option>
+                  <option>Private Dining</option>
+                  <option>Event Booking</option>
+                  <option>Press &amp; Media</option>
+                  <option>Partnership</option>
+                  <option>Feedback</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group full" style="margin-bottom:1rem">
+              <label for="c-message">Message</label>
+              <textarea id="c-message" name="message" rows="5" placeholder="Tell us how we can help…"
+                required></textarea>
+            </div>
+            <div class="contact-submit-row">
+              <button type="submit" class="btn btn-gold full">
+                <svg style="width:16px;height:16px;vertical-align:middle;margin-right:8px;flex-shrink:0"
+                  viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                </svg>
+                Send via WhatsApp
+              </button>
+            </div>
+            <div class="contact-success" id="contactSuccess">
+              <svg style="width:15px;height:15px;flex-shrink:0" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              Thank you. Your message has been sent via WhatsApp — we'll get back to you shortly.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo large">
+          <img src="logo.png" alt="Afrish Petals" class="nav-logo-img" />
+          <span class="logo-text">Afrish Petals</span>
+        </a>
+        <p>Fine African Fusion Dining<br>Executive Suite Building, KN 063 St<br>Near Norssken, Kigali, Rwanda</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/afrishpetals/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html#about">Our Story</a></li>
+          <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">The Menu</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="gallery.html" target="_blank" rel="noopener">Gallery</a></li>
+          <li><a href="index.html#reserve">Reservations</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Dining</h4>
+        <ul>
+          <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">Tasting Menu</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Chef's Table</a></li>
+          <li><a href="#">Wine Cellar</a></li>
+          <li><a href="#">Gift Vouchers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Visit</h4>
+        <ul>
+          <li><span>Tue – Sun: 6 pm – 11 pm</span></li>
+          <li><span>+250 784 869 980</span></li>
+          <li><span>reservations@afrishpetals.rw</span></li>
+          <li><span>KN 063 St, Kigali, Rwanda</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Afrish Petals. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Widget -->
+  <div class="wa-widget" id="waWidget">
+    <div class="wa-popup" id="waPopup">
+      <div class="wa-popup-header">
+        <div class="wa-avatar">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+          </svg>
+        </div>
+        <div class="wa-popup-info">
+          <strong>Afrish Petals</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" id="waClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="wa-popup-body">
+        <div class="wa-message">
+          <p>Hello! Welcome to <strong>Afrish Petals</strong>.<br>Choose who you'd like to chat with:</p>
+        </div>
+        <div class="wa-contacts">
+          <a class="wa-contact"
+            href="https://wa.me/250784869980?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Afrish%20Petals."
+            target="_blank" rel="noopener">
+            <div class="wa-contact-avatar">AP</div>
+            <div class="wa-contact-info"><strong>Restaurant Owner</strong><span>Reservations &amp; Private Dining</span>
+            </div>
+            <svg class="wa-contact-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+          </a>
+          <a class="wa-contact"
+            href="https://wa.me/250786666111?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Afrish%20Petals."
+            target="_blank" rel="noopener">
+            <div class="wa-contact-avatar sm">SM</div>
+            <div class="wa-contact-info"><strong>Systems Manager</strong><span>Technical &amp; General Support</span>
+            </div>
+            <svg class="wa-contact-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <button class="wa-fab" id="waFab" aria-label="Chat on WhatsApp">
+      <svg class="wa-fab-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+      </svg>
+      <span class="wa-fab-label">Chat with us</span>
+      <span class="wa-pulse"></span>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    /* Contact form — sends via WhatsApp to +250 784 869 980 */
+    const contactForm = document.getElementById('contactForm');
+    const contactSuccess = document.getElementById('contactSuccess');
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Validate required fields
+        const required = contactForm.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(f => {
+          f.style.borderColor = '';
+          if (!f.value.trim()) { f.style.borderColor = '#e05c5c'; valid = false; }
+        });
+        if (!valid) return;
+
+        // Gather form values
+        const name = document.getElementById('c-name').value.trim();
+        const email = document.getElementById('c-email').value.trim();
+        const phone = document.getElementById('c-phone').value.trim();
+        const subject = document.getElementById('c-subject').value.trim();
+        const message = document.getElementById('c-message').value.trim();
+
+        // Build the WhatsApp message
+        const text = [
+          '🌸 *New Message — Afrish Petals Website*',
+          '',
+          `*Name:* ${name}`,
+          `*Email:* ${email}`,
+          phone ? `*Phone:* ${phone}` : null,
+          subject ? `*Subject:* ${subject}` : null,
+          '',
+          `*Message:*`,
+          message
+        ].filter(l => l !== null).join('\n');
+
+        const waURL = 'https://wa.me/250784869980?text=' + encodeURIComponent(text);
+
+        // Show loading state
+        const btn = contactForm.querySelector('[type="submit"]');
+        btn.textContent = 'Opening WhatsApp…';
+        btn.style.opacity = '0.7';
+        btn.disabled = true;
+
+        // Brief pause then open WhatsApp and show success
+        setTimeout(() => {
+          window.open(waURL, '_blank', 'noopener');
+          contactSuccess.classList.add('visible');
+          contactForm.reset();
+          btn.textContent = 'Send Message';
+          btn.style.opacity = '';
+          btn.disabled = false;
+          contactSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 800);
+      });
+    }
+  </script>
+</body>
+
+</html>

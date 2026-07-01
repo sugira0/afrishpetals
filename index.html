@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afrish Petals — Fine African Fusion Dining</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Scroll progress -->
+  <div id="scrollProgress"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo"><img src="logo.png" alt="Afrish Petals" /></div>
+      <p class="preloader-text">Afrish Petals</p>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Logo watermark -->
+  <div class="logo-watermark" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="logo.png" alt="Afrish Petals" class="nav-logo-img" />
+        <span class="logo-text">Afrish Petals</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">The Menu</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="gallery.html" target="_blank" rel="noopener">Gallery</a></li>
+        <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+        <li><a href="#testimonials" class="nav-cta">Book a Table or Event</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <!-- Video background -->
+    <div class="hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline poster="images/afrish-main.jpg">
+        <source src="images/interior-web.mp4" type="video/mp4" />
+        <!-- Fallback slideshow shown if video fails -->
+      </video>
+    </div>
+    <!-- Fallback slideshow (shown when video not playing) -->
+    <div class="hero-slides" id="heroSlides" aria-hidden="true">
+      <div class="hero-slide active" style="background-image:url('images/afrish-main.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/afrish-view1.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/afrish-view2.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('images/afrish-view3.jpg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-corners" aria-hidden="true">
+      <span class="corner tl"></span>
+      <span class="corner tr"></span>
+      <span class="corner bl"></span>
+      <span class="corner br"></span>
+    </div>
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="hero-content">
+      <p class="hero-tagline reveal">Est. 2018 &nbsp;·&nbsp; Kigali, Rwanda</p>
+      <h1 class="hero-title reveal">
+        <span>Where Africa</span>
+        <em>Blooms</em>
+        <span>at the Table</span>
+      </h1>
+      <p class="hero-subtitle reveal">An extraordinary journey through the flavours, spices, and soul of the African
+        continent — reimagined for the modern palate.</p>
+      <div class="hero-actions reveal">
+        <a href="#testimonials" class="btn btn-gold">Reserve a Table</a>
+        <a href="https://afrishpetals.rw" target="_blank" rel="noopener" class="btn btn-outline">Explore Menu</a>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll" aria-label="Scroll down">
+      <span class="scroll-line"></span>
+      <span class="scroll-label">Scroll</span>
+    </a>
+  </section>
+
+  <!-- Award Strip -->
+  <div class="awards-strip">
+    <div class="awards-inner">
+      <div class="award-item">
+        <svg class="award-icon" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+          <polygon points="5,0 10,5 5,10 0,5" />
+        </svg>
+        <span>Michelin Recommended 2024</span>
+      </div>
+      <span class="award-sep">|</span>
+      <div class="award-item">
+        <svg class="award-icon" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+          <polygon points="5,0 10,5 5,10 0,5" />
+        </svg>
+        <span>Africa's 50 Best Restaurants</span>
+      </div>
+      <span class="award-sep">|</span>
+      <div class="award-item">
+        <svg class="award-icon" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+          <polygon points="5,0 10,5 5,10 0,5" />
+        </svg>
+        <span>Condé Nast Traveller Pick</span>
+      </div>
+      <span class="award-sep">|</span>
+      <div class="award-item">
+        <svg class="award-icon" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true">
+          <polygon points="5,0 10,5 5,10 0,5" />
+        </svg>
+        <span>5-Star Hospitality Award</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images">
+          <div class="about-img-main reveal-left">
+            <img src="images/afrish-view1.jpg" alt="Afrish Petals dining room" loading="lazy" />
+          </div>
+          <div class="about-img-accent reveal-left" style="transition-delay:0.2s">
+            <img src="images/afrish-view2.jpg" alt="Afrish Petals interior" loading="lazy" />
+            <div class="img-badge">
+              <span class="badge-num" data-count="15">15+</span>
+              <span class="badge-label">Years of<br>Mastery</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal-right">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">A Celebration of<br><em>African Heritage</em></h2>
+          <div class="title-rule"></div>
+          <p>Born from a deep reverence for the vast culinary landscapes of Africa, Afrish Petals was conceived as more
+            than a restaurant — it is a living tribute to the continent's extraordinary diversity of flavours,
+            traditions, and stories.</p>
+          <p>Our head chef, Amara Osei, trained across Lagos, Marrakech, Addis Ababa, and Cape Town before bringing this
+            tapestry of techniques to Kigali, weaving them into tasting menus that honour their roots while pushing
+            boldly into new territory.</p>
+          <div class="about-values">
+            <div class="value-item">
+              <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
+              <div>
+                <strong>Sourced Locally</strong>
+                <p>Every ingredient chosen from Kenya's finest farms and markets.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" />
+              </svg>
+              <div>
+                <strong>Crafted with Intent</strong>
+                <p>Each dish tells a story drawn from African culinary heritage.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <svg class="value-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 11V6a2 2 0 0 0-4 0v5" />
+                <path d="M14 10V4a2 2 0 0 0-4 0v6" />
+                <path d="M10 10.5V6a2 2 0 0 0-4 0v8" />
+                <path
+                  d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+              </svg>
+              <div>
+                <strong>Served with Grace</strong>
+                <p>Unhurried, attentive service worthy of every occasion.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#testimonials" class="btn btn-gold">Dine with Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu">
+    <div class="menu-bg"></div>
+    <div class="container">
+      <div class="section-header centered">
+        <p class="section-label reveal">Signature Dining</p>
+        <h2 class="section-title reveal">Special Orders <em>in Afrish</em></h2>
+        <div class="title-rule centered reveal"></div>
+        <p class="section-desc reveal">Crafted exclusively for you — each dish a bespoke journey through the flavours of
+          Africa.</p>
+      </div>
+
+      <div class="special-orders-grid">
+
+        <div class="special-order-card reveal">
+          <div class="special-order-photo">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Suya Tataki"
+              loading="lazy" />
+            <span class="special-order-tag">Signature Starter</span>
+          </div>
+          <div class="special-order-body">
+            <h3>Suya Tataki</h3>
+            <p>Seared beef tenderloin dusted in suya spice, groundnut sauce, cucumber pickle</p>
+            <span class="special-order-price">RWF 1,850</span>
+          </div>
+        </div>
+
+        <div class="special-order-card reveal">
+          <div class="special-order-photo">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Maasai Lamb Rack"
+              loading="lazy" />
+            <span class="special-order-tag">Signature Main</span>
+          </div>
+          <div class="special-order-body">
+            <h3>Maasai Lamb Rack</h3>
+            <p>French-trimmed rack, berbere crust, lamb jus, roasted root vegetables, injera crisp</p>
+            <span class="special-order-price">RWF 4,800</span>
+          </div>
+        </div>
+
+        <div class="special-order-card reveal">
+          <div class="special-order-photo">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Wagyu Short Rib"
+              loading="lazy" />
+            <span class="special-order-tag">Chef's Special</span>
+          </div>
+          <div class="special-order-body">
+            <h3>Wagyu Short Rib</h3>
+            <p>72-hour braised wagyu, red wine &amp; Amarula reduction, sweet potato fondant</p>
+            <span class="special-order-price">RWF 6,500</span>
+          </div>
+        </div>
+
+        <div class="special-order-card reveal">
+          <div class="special-order-photo">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Malva Soufflé"
+              loading="lazy" />
+            <span class="special-order-tag">Signature Dessert</span>
+          </div>
+          <div class="special-order-body">
+            <h3>Malva Soufflé</h3>
+            <p>Classic South African malva pudding reimagined as a hot soufflé, amarula crème anglaise</p>
+            <span class="special-order-price">RWF 1,400</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="menu-footer reveal">
+        <p>All prices inclusive of taxes. Please inform us of any allergies or dietary requirements.</p>
+        <div class="menu-footer-btns">
+          <a href="https://afrishpetals.rw" target="_blank" rel="noopener" class="btn btn-gold">
+            <svg style="width:15px;height:15px;vertical-align:middle;margin-right:6px" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            View Full Menu
+          </a>
+          <a href="#testimonials" class="btn btn-outline">Reserve a Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience / Quote -->
+  <section id="experience">
+    <div class="experience-overlay"></div>
+    <div class="container experience-inner">
+      <div class="experience-quote reveal">
+        <span class="quote-mark">"</span>
+        <blockquote>To eat at Afrish Petals is to travel the entire continent without leaving your chair — each course a
+          new country, a new memory, a new emotion.</blockquote>
+        <cite>— The East African Magazine</cite>
+      </div>
+      <div class="experience-features">
+        <div class="feature-card reveal">
+          <div class="feature-icon">🕯</div>
+          <h3>Intimate Ambience</h3>
+          <p>Forty-two seats, candlelit tables, and a private dining room for up to twelve guests.</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.15s">
+          <div class="feature-icon">🍷</div>
+          <h3>African Wine Cellar</h3>
+          <p>Over 180 labels curated exclusively from South Africa, Morocco, and Ethiopia.</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.3s">
+          <div class="feature-icon">🎶</div>
+          <h3>Live Jazz Fridays</h3>
+          <p>Every Friday evening — original Afro-jazz compositions alongside your dining experience.</p>
+        </div>
+        <div class="feature-card reveal" style="transition-delay:0.45s">
+          <div class="feature-icon">👨‍🍳</div>
+          <h3>Chef's Table</h3>
+          <p>Watch the kitchen come alive from our exclusive six-seat chef's counter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header centered">
+        <p class="section-label reveal">Visual Story</p>
+        <h2 class="section-title reveal">A Feast for <em>the Eyes</em></h2>
+        <div class="title-rule centered reveal"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item tall reveal"><img src="images/afrish-main.jpg" alt="Afrish Petals restaurant"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>The Restaurant</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.1s"><img
+            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" alt="Gourmet plate"
+            loading="lazy" />
+          <div class="gallery-overlay"><span>Tasting Menu</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.2s"><img
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400&q=80" alt="Cocktails" loading="lazy" />
+          <div class="gallery-overlay"><span>Craft Cocktails</span></div>
+        </div>
+        <div class="gallery-item wide reveal" style="transition-delay:0.15s"><img src="images/afrish-view1.jpg"
+            alt="Afrish Petals dining room" loading="lazy" />
+          <div class="gallery-overlay"><span>The Dining Room</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.25s"><img
+            src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&q=80" alt="Dessert" loading="lazy" />
+          <div class="gallery-overlay"><span>Malva Soufflé</span></div>
+        </div>
+        <div class="gallery-item reveal" style="transition-delay:0.35s"><img src="images/afrish-view3.jpg"
+            alt="Afrish Petals ambience" loading="lazy" />
+          <div class="gallery-overlay"><span>The Ambience</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="testimonials-bg" aria-hidden="true"></div>
+    <div class="testimonials-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header centered">
+        <p class="section-label reveal">Happy Guests</p>
+        <h2 class="section-title reveal">Words from Our <em>Cherished Guests</em></h2>
+        <div class="title-rule centered reveal"></div>
+        <p class="section-desc reveal">Every meal is a memory. Here's what our guests say about their time at Afrish
+          Petals.</p>
+      </div>
+
+      <!-- Rating summary bar -->
+      <div class="testi-summary reveal">
+        <div class="testi-score">
+          <span class="testi-score-num">4.9</span>
+          <div class="testi-score-right">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <span class="testi-score-label">Overall Experience</span>
+          </div>
+        </div>
+        <div class="testi-bars">
+          <div class="testi-bar-row"><span>Food Quality</span>
+            <div class="testi-bar">
+              <div class="testi-bar-fill" style="--w:98%"></div>
+            </div><span class="testi-bar-pct">98%</span>
+          </div>
+          <div class="testi-bar-row"><span>Ambience</span>
+            <div class="testi-bar">
+              <div class="testi-bar-fill" style="--w:96%"></div>
+            </div><span class="testi-bar-pct">96%</span>
+          </div>
+          <div class="testi-bar-row"><span>Service</span>
+            <div class="testi-bar">
+              <div class="testi-bar-fill" style="--w:97%"></div>
+            </div><span class="testi-bar-pct">97%</span>
+          </div>
+          <div class="testi-bar-row"><span>Value</span>
+            <div class="testi-bar">
+              <div class="testi-bar-fill" style="--w:94%"></div>
+            </div><span class="testi-bar-pct">94%</span>
+          </div>
+        </div>
+        <div class="testi-platforms">
+          <div class="testi-platform-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <span>Google 4.9 ★</span>
+          </div>
+          <div class="testi-platform-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <span>TripAdvisor 5 ★</span>
+          </div>
+          <div class="testi-platform-pill">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+            </svg>
+            <span>Yelp 4.8 ★</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel track -->
+      <div class="testi-carousel" id="testiCarousel" aria-label="Customer testimonials">
+        <div class="testi-track" id="testiTrack">
+
+          <article class="testi-card">
+            <div class="testi-card-top">
+              <div class="testi-avatar" style="background:linear-gradient(135deg,#c9a84c,#8b6914)" aria-hidden="true">AM
+              </div>
+              <div class="testi-meta">
+                <strong>Amara Mensah</strong>
+                <span>Lagos, Nigeria</span>
+              </div>
+              <div class="testi-stars-sm" aria-label="5 stars">★★★★★</div>
+            </div>
+            <blockquote class="testi-quote">"Dining at Afrish Petals was nothing short of transcendent. The Suya Tataki
+              took me straight back to childhood street food memories — but elevated to something sublime. The candlelit
+              room, the attentive staff, the Afro-jazz drifting from the corner… I've dined across three continents and
+              this ranks among my very finest evenings."</blockquote>
+            <div class="testi-footer-row">
+              <span class="testi-occasion">Anniversary Dinner</span>
+              <span class="testi-date">April 2026</span>
+            </div>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-card-top">
+              <div class="testi-avatar" style="background:linear-gradient(135deg,#6a5acd,#3d2b8c)" aria-hidden="true">SN
+              </div>
+              <div class="testi-meta">
+                <strong>Sophie Nakimera</strong>
+                <span>Kigali, Rwanda</span>
+              </div>
+              <div class="testi-stars-sm" aria-label="5 stars">★★★★★</div>
+            </div>
+            <blockquote class="testi-quote">"We hosted our company gala dinner in the private event room and it was
+              flawless. Chef Amara personally greeted us and the bespoke menu — built around our guests' dietary needs —
+              was a masterpiece. Our clients still talk about it three months later. Afrish Petals is in a league of its
+              own in Kigali."</blockquote>
+            <div class="testi-footer-row">
+              <span class="testi-occasion">Corporate Gala</span>
+              <span class="testi-date">March 2026</span>
+            </div>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-card-top">
+              <div class="testi-avatar" style="background:linear-gradient(135deg,#d4695a,#8b2a1a)" aria-hidden="true">JO
+              </div>
+              <div class="testi-meta">
+                <strong>James Odhiambo</strong>
+                <span>Nairobi, Kenya</span>
+              </div>
+              <div class="testi-stars-sm" aria-label="5 stars">★★★★★</div>
+            </div>
+            <blockquote class="testi-quote">"The Maasai Lamb Rack with berbere crust left me speechless. I've eaten in
+              Nairobi, Joburg and London — the technique here rivals the very best. What sets Afrish Petals apart is the
+              soul in every plate. You taste intention, heritage, and genuine love in every bite. Booked my next visit
+              before leaving."</blockquote>
+            <div class="testi-footer-row">
+              <span class="testi-occasion">Birthday Dinner</span>
+              <span class="testi-date">May 2026</span>
+            </div>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-card-top">
+              <div class="testi-avatar" style="background:linear-gradient(135deg,#2a9d8f,#145c54)" aria-hidden="true">FC
+              </div>
+              <div class="testi-meta">
+                <strong>Fatima Camara</strong>
+                <span>Dakar, Senegal</span>
+              </div>
+              <div class="testi-stars-sm" aria-label="5 stars">★★★★★</div>
+            </div>
+            <blockquote class="testi-quote">"As someone who has cooked African cuisine professionally for years, I was
+              skeptical of 'fusion'. Afrish Petals proved me wonderfully wrong. The respect for traditional technique
+              while pushing flavour boundaries is extraordinary. The Malva Soufflé dessert alone is worth the flight to
+              Kigali. Truly remarkable."</blockquote>
+            <div class="testi-footer-row">
+              <span class="testi-occasion">Chef's Table Experience</span>
+              <span class="testi-date">February 2026</span>
+            </div>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-card-top">
+              <div class="testi-avatar" style="background:linear-gradient(135deg,#e9c46a,#a07820)" aria-hidden="true">DT
+              </div>
+              <div class="testi-meta">
+                <strong>David Tuyishime</strong>
+                <span>Kigali, Rwanda</span>
+              </div>
+              <div class="testi-stars-sm" aria-label="5 stars">★★★★★</div>
+            </div>
+            <blockquote class="testi-quote">"Proposed to my partner at Afrish Petals on a Live Jazz Friday and the team
+              made it absolutely perfect — they coordinated with the musicians for a special song and arranged rose
+              petals on the table without me even asking. She said yes. This place has our hearts forever."</blockquote>
+            <div class="testi-footer-row">
+              <span class="testi-occasion">Romantic Proposal</span>
+              <span class="testi-date">January 2026</span>
+            </div>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-card-top">
+              <div class="testi-avatar" style="background:linear-gradient(135deg,#457b9d,#1d3a57)" aria-hidden="true">MR
+              </div>
+              <div class="testi-meta">
+                <strong>Marie-Claire Rousseau</strong>
+                <span>Paris, France</span>
+              </div>
+              <div class="testi-stars-sm" aria-label="5 stars">★★★★★</div>
+            </div>
+            <blockquote class="testi-quote">"Je suis venue à Kigali pour affaires et Afrish Petals était une révélation
+              totale. The wine pairing — a South African Pinotage alongside the Wagyu Short Rib — was inspired. The
+              sommelier's knowledge of African wines is extraordinary. A restaurant at this level belongs on every
+              serious food lover's list."</blockquote>
+            <div class="testi-footer-row">
+              <span class="testi-occasion">Business Dinner</span>
+              <span class="testi-date">June 2026</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Carousel controls -->
+      <div class="testi-controls" aria-label="Carousel controls">
+        <button class="testi-arrow testi-prev" id="testiPrev" aria-label="Previous reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <div class="testi-dots" id="testiDots" role="tablist" aria-label="Go to slide"></div>
+        <button class="testi-arrow testi-next" id="testiNext" aria-label="Next reviews">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- CTA strip -->
+      <div class="testi-cta reveal">
+        <p>Ready to create your own unforgettable memory?</p>
+        <a href="contact.html" target="_blank" rel="noopener" class="btn btn-gold">Reserve Your Table</a>
+        <a href="https://afrishpetals.rw" target="_blank" rel="noopener" class="btn btn-outline">Explore the Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Follow Banner -->
+  <section id="social-follow">
+    <div class="social-follow-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="social-follow-inner reveal">
+        <div class="social-follow-text">
+          <p class="section-label">Stay Connected</p>
+          <h2 class="social-follow-title">Follow the <em>Afrish Petals</em> Story</h2>
+          <p class="social-follow-sub">Behind every dish is a story worth sharing. Follow us on Instagram for
+            behind-the-scenes moments, new menu reveals, live jazz evenings, and the faces that bring Afrish Petals to
+            life — every single day.</p>
+        </div>
+        <div class="social-follow-cards">
+          <a href="https://www.instagram.com/afrishpetals/" target="_blank" rel="noopener"
+            class="social-card instagram">
+            <div class="social-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4.5" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <div class="social-card-body">
+              <strong>@afrishpetals</strong>
+              <span>Follow on Instagram</span>
+            </div>
+            <div class="social-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+          </a>
+          <a href="#" class="social-card facebook">
+            <div class="social-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </div>
+            <div class="social-card-body">
+              <strong>Afrish Petals</strong>
+              <span>Like on Facebook</span>
+            </div>
+            <div class="social-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+          </a>
+          <a href="#" class="social-card twitter">
+            <div class="social-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </div>
+            <div class="social-card-body">
+              <strong>@afrishpetals</strong>
+              <span>Follow on X</span>
+            </div>
+            <div class="social-card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating perks -->
+      <div class="social-perks reveal">
+        <div class="social-perk">
+          <span class="perk-icon">📸</span>
+          <span>Daily food & ambience posts</span>
+        </div>
+        <div class="social-perk">
+          <span class="perk-icon">🎶</span>
+          <span>Live Jazz Friday updates</span>
+        </div>
+        <div class="social-perk">
+          <span class="perk-icon">🍽️</span>
+          <span>New menu reveals first</span>
+        </div>
+        <div class="social-perk">
+          <span class="perk-icon">🎁</span>
+          <span>Exclusive offers for followers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo large">
+          <img src="logo.png" alt="Afrish Petals" class="nav-logo-img" />
+          <span class="logo-text">Afrish Petals</span>
+        </a>
+        <p>Fine African Fusion Dining<br>Executive Suite Building, KN 063 St<br>Near Norssken, Kigali, Rwanda</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/afrishpetals/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4.5" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">The Menu</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="gallery.html" target="_blank" rel="noopener">Gallery</a></li>
+          <li><a href="#testimonials">Reservations</a></li>
+          <li><a href="contact.html" target="_blank" rel="noopener">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Dining</h4>
+        <ul>
+          <li><a href="https://afrishpetals.rw" target="_blank" rel="noopener">Tasting Menu</a></li>
+          <li><a href="#">Private Dining</a></li>
+          <li><a href="#">Chef's Table</a></li>
+          <li><a href="#">Wine Cellar</a></li>
+          <li><a href="#">Gift Vouchers</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Visit</h4>
+        <ul>
+          <li><span>Tue – Sun: 6 pm – 11 pm</span></li>
+          <li><span>+250 784 869 980</span></li>
+          <li><span>reservations@afrishpetals.rw</span></li>
+          <li><span>KN 063 St, Kigali, Rwanda</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Afrish Petals. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Widget -->
+  <div class="wa-widget" id="waWidget">
+    <div class="wa-popup" id="waPopup">
+      <div class="wa-popup-header">
+        <div class="wa-avatar">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+          </svg>
+        </div>
+        <div class="wa-popup-info">
+          <strong>Afrish Petals</strong>
+          <span>Typically replies instantly</span>
+        </div>
+        <button class="wa-close" id="waClose" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div class="wa-popup-body">
+        <div class="wa-message">
+          <p>Hello! Welcome to <strong>Afrish Petals</strong>.<br>Choose who you'd like to chat with:</p>
+        </div>
+        <div class="wa-contacts">
+          <a class="wa-contact"
+            href="https://wa.me/250784869980?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Afrish%20Petals."
+            target="_blank" rel="noopener">
+            <div class="wa-contact-avatar">AP</div>
+            <div class="wa-contact-info">
+              <strong>Restaurant Owner</strong>
+              <span>Reservations &amp; Private Dining</span>
+            </div>
+            <svg class="wa-contact-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+          </a>
+          <a class="wa-contact"
+            href="https://wa.me/250786666111?text=Hello%2C%20I%27d%20like%20to%20enquire%20about%20Afrish%20Petals."
+            target="_blank" rel="noopener">
+            <div class="wa-contact-avatar sm">SM</div>
+            <div class="wa-contact-info">
+              <strong>Systems Manager</strong>
+              <span>Technical &amp; General Support</span>
+            </div>
+            <svg class="wa-contact-arrow" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <button class="wa-fab" id="waFab" aria-label="Chat on WhatsApp">
+      <svg class="wa-fab-icon wa-icon-chat" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.136.562 4.14 1.54 5.877L.057 23.009a.75.75 0 0 0 .934.934l5.132-1.483A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.686-.525-5.204-1.437l-.372-.224-3.862 1.116 1.085-3.742-.243-.386A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+      </svg>
+      <span class="wa-fab-label">Chat with us</span>
+      <span class="wa-pulse"></span>
+    </button>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">&#x2715;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
