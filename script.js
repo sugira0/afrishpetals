@@ -260,15 +260,24 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   const closeBtn = document.getElementById('waClose');
   if (!fab || !popup) return;
 
-  fab.addEventListener('click', () => popup.classList.toggle('open'));
-  if (closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation(); popup.classList.remove('open'); });
+  // Show on hover (desktop)
+  fab.addEventListener('mouseenter', () => popup.classList.add('open'));
 
-  if (!sessionStorage.getItem('waShown')) {
-    setTimeout(() => {
-      popup.classList.add('open');
-      sessionStorage.setItem('waShown', '1');
-    }, 8000);
-  }
+  // Toggle on click / tap (mobile)
+  fab.addEventListener('click', () => popup.classList.toggle('open'));
+
+  // Close button
+  if (closeBtn) closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    popup.classList.remove('open');
+  });
+
+  // Close when clicking anywhere outside the widget
+  document.addEventListener('click', (e) => {
+    if (!fab.contains(e.target) && !popup.contains(e.target)) {
+      popup.classList.remove('open');
+    }
+  });
 })();
 
 /* ===== SCROLL PROGRESS BAR ===== */
