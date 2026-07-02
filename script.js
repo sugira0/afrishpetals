@@ -62,6 +62,11 @@ if (navbar) {
       navLinks.classList.remove('open');
       if (navbar) navbar.classList.remove('menu-open');
     });
+    // Also handle touchend for faster mobile response
+    link.addEventListener('touchend', (e) => {
+      navLinks.classList.remove('open');
+      if (navbar) navbar.classList.remove('menu-open');
+    }, { passive: true });
   });
 })();
 

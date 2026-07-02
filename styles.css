@@ -1525,6 +1525,9 @@ cite {
     justify-content: center;
     gap: 2rem;
     font-size: 1.1rem;
+    z-index: 999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-links.open {
@@ -1533,6 +1536,11 @@ cite {
 
   .nav-links a {
     font-size: 0.9rem;
+    padding: 0.5rem 0;
+    pointer-events: auto;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(201, 168, 76, 0.2);
+    touch-action: manipulation;
   }
 
   .nav-cta {
@@ -1543,7 +1551,7 @@ cite {
   .nav-toggle {
     display: flex;
     position: relative;
-    z-index: 1001;
+    z-index: 1002;
   }
 
   #navbar.menu-open .nav-toggle span:nth-child(1) {
