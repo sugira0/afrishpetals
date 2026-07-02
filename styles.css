@@ -1072,7 +1072,19 @@ cite {
 .feature-icon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 1.2rem;
+  border: 1px solid var(--border);
+  color: var(--gold);
+}
+
+.feature-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .feature-card h3 {
@@ -3569,8 +3581,18 @@ blockquote {
 }
 
 .perk-icon {
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
+  color: var(--gold);
+}
+
+.perk-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* Responsive */
