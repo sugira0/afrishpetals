@@ -1,0 +1,29 @@
+.lmap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 22rem;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 90% at 60% 45%, #103428 0%, #0a231b 55%, #061510 100%);
+}
+.lmap__svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.lmap__badge {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(245, 154, 69, 0.3);
+  color: rgba(245, 154, 69, 0.85);
+  font-size: 0.56rem;
+  background: rgba(3, 9, 8, 0.6);
+}
+.lmap--live iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  /* tones the stock map into the brand palette */
+  filter: grayscale(1) invert(0.92) contrast(0.85) sepia(0.25) hue-rotate(110deg) saturate(0.7);
+}

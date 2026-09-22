@@ -1,0 +1,2955 @@
+{
+ "source": "https://www.doresto.com/restaurant/afrish-petals",
+ "importedAt": "2026-09-21",
+ "expected": 270,
+ "dishes": [
+  {
+   "id": 81,
+   "name": "Afrish salads",
+   "desc": "Contains onion, lettuce, carotte, tomatoes…",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 98,
+   "name": "vegetables soup",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 100,
+   "name": "Creame of mushroom",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 101,
+   "name": "crecy soup(carrots)",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 102,
+   "name": "Chicken Stroganoff",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 103,
+   "name": "Chicken vegetables soup",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 104,
+   "name": "Chicken Wings",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 105,
+   "name": "Fish vegetables soup",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 106,
+   "name": "Buffet",
+   "desc": "plate of chips, rice , vegetable…",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 107,
+   "name": "Beef Burger",
+   "desc": "Tomatoes,onion,lettuce…",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 108,
+   "name": "fish red soup",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 109,
+   "name": "King Bouble Burger",
+   "desc": "king bouble burger with two grilled beef cheese to…",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 134,
+   "name": "chips beef/chicken",
+   "desc": "chips,beef,salads,mayon and tomato sauce",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 135,
+   "name": "special chips beef/chicken",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 137,
+   "name": "Pizza 4 season",
+   "desc": "Delight ina pizza with a taste for every season .o…",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 140,
+   "name": "Chicken pizza",
+   "desc": "A mountainainering delight featuring tender chicke…",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 146,
+   "name": "Vegetarian pizza",
+   "desc": "A garden fresh symphony of colorful vegetables inc…",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 159,
+   "name": "Marghetita Pizza",
+   "desc": "spicy pasta dish made with penne noodles…",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 162,
+   "name": "Pineapples Pizza",
+   "desc": "pineapples,ham,,tomatoes",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 164,
+   "name": "Fish burger",
+   "desc": "Fried fish ,tomato,onion,lettuce,mayonnaise…",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 167,
+   "name": "Tripple burger",
+   "desc": "tree grilled beef cheese,tomato,lettuce…",
+   "price": 9000,
+   "prices": [
+    9000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 171,
+   "name": "AFRISH Burger",
+   "desc": "grilled beef,mushroom,tomato,lettuce…",
+   "price": 9000,
+   "prices": [
+    9000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 177,
+   "name": "Chicken burger",
+   "desc": "Grilled chicken,lettuce,tomato,mayonnase…",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 182,
+   "name": "Vegetarian Burger",
+   "desc": "lettuce,grilled onion,green papper,avocado,tomato…",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 185,
+   "name": "Spaghetti bolognese",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 187,
+   "name": "NAPOLINATO",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 188,
+   "name": "CARBONARE",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 191,
+   "name": "Chips",
+   "desc": "",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 193,
+   "name": "spiced chips",
+   "desc": "",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 195,
+   "name": "CHIPS MASALA",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 197,
+   "name": "Plain rice",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 199,
+   "name": "Green vegetables",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 203,
+   "name": "TAOSTED BREAD",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 206,
+   "name": "potatoes grilled",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 207,
+   "name": "grilled baanana",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 216,
+   "name": "Chicken Red Soup",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 217,
+   "name": "Beef Red Soup",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 218,
+   "name": "Creame of Mushroom Soup",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 231,
+   "name": "Agatogo",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 232,
+   "name": "Special omelette",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 233,
+   "name": "Plain Omelette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 235,
+   "name": "Spanish Omelette",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 236,
+   "name": "beef stew",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 237,
+   "name": "Chips Liver",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 238,
+   "name": "Chips salads",
+   "desc": "",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 240,
+   "name": "Chicken Wrap",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 241,
+   "name": "Vegetable Wrap",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 243,
+   "name": "Chips & Fish Fillet",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 244,
+   "name": "Chips And Fish",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 245,
+   "name": "Whole Chicken",
+   "desc": "",
+   "price": 20000,
+   "prices": [
+    20000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 246,
+   "name": "Whole Chicken With Rice",
+   "desc": "",
+   "price": 27000,
+   "prices": [
+    27000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 248,
+   "name": "Beef Stroganoff",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 249,
+   "name": "Umusokoro",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 250,
+   "name": "Ubugari/Akawunga With Isambaza",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 251,
+   "name": "Ubugari/ Akawunga with Chicken",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 252,
+   "name": "Ubugari / Akawunga with Beef",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 253,
+   "name": "Ubugari/ Akawunga with Fish Fillet",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 254,
+   "name": "Ubugari / Akawunga with Fish Tilapia",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 255,
+   "name": "Full Plate",
+   "desc": "With chips, rice , vegetables, salad, beans…",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 256,
+   "name": "Banana Grilled",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 257,
+   "name": "Beef Brochette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 258,
+   "name": "Goat Brochette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 259,
+   "name": "Fish Brochette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 260,
+   "name": "Zingalo Brochette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 261,
+   "name": "Liver Brochette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 262,
+   "name": "Whole Fish Grilled With Chips",
+   "desc": "",
+   "price": 20000,
+   "prices": [
+    20000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 263,
+   "name": "Chicken Provencal",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 264,
+   "name": "Chicken Brochette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 265,
+   "name": "Chicken legs",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 266,
+   "name": "Breast of Chicken with Chips Salad",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 271,
+   "name": "BREAKFAST",
+   "desc": "Full plate",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 296,
+   "name": "pomme soute",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 312,
+   "name": "Cookies",
+   "desc": "",
+   "price": 150,
+   "prices": [
+    150
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 359,
+   "name": "Take Away",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 362,
+   "name": "Mayonaisse",
+   "desc": "Extra Mayonnaise",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 367,
+   "name": "Beef Dry fly",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 368,
+   "name": "Honey",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 369,
+   "name": "Special Chips",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 370,
+   "name": "Margharette bread",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 372,
+   "name": "Flied rice",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 375,
+   "name": "Buffet with Drink",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 377,
+   "name": "pilawu",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 378,
+   "name": "Mango fruit",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 379,
+   "name": "Fish Meat",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 386,
+   "name": "FIish fillet plantain",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 389,
+   "name": "beans",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 393,
+   "name": "Avocado",
+   "desc": "Half and all",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 394,
+   "name": "Chicken Rice",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 399,
+   "name": "sambusa",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 405,
+   "name": "LOREX with chips",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 412,
+   "name": "fish fillet",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 413,
+   "name": "Premium Chicken with Pomme soute",
+   "desc": "",
+   "price": 45000,
+   "prices": [
+    45000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 432,
+   "name": "Beef Wrap",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 434,
+   "name": "PLATTA Chicken potatoes",
+   "desc": "",
+   "price": 30000,
+   "prices": [
+    30000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 436,
+   "name": "Special Guest Meal",
+   "desc": "",
+   "price": 12000,
+   "prices": [
+    12000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 438,
+   "name": "Ubugari / Akawunga with Vegetable",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 447,
+   "name": "FISH WRAP",
+   "desc": "A fish wrap can mean a delicious meal made with fi…",
+   "price": 9000,
+   "prices": [
+    9000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 451,
+   "name": "chicken stew",
+   "desc": "A classic, comforting chicken stew is a hearty…",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 454,
+   "name": "LUNCH",
+   "desc": "",
+   "price": 15000,
+   "prices": [
+    15000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 455,
+   "name": "DINNER",
+   "desc": "",
+   "price": 15000,
+   "prices": [
+    15000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 456,
+   "name": "Special meat Omelet",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 462,
+   "name": "Brochette",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": true,
+   "section": "FastFood"
+  },
+  {
+   "id": 464,
+   "name": "Lorex",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FastFood"
+  },
+  {
+   "id": 86,
+   "name": "Nicoise salads",
+   "desc": "Lettuce,boiled red potatoes,eggs…",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "Salad"
+  },
+  {
+   "id": 87,
+   "name": "Mele of chicken salads",
+   "desc": "lettuce,tomatoes,cocomber,cheese,sweet corn…",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "Salad"
+  },
+  {
+   "id": 88,
+   "name": "Oriental salads",
+   "desc": "lettuce,tomato,cocomber,parley green papp…",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "Salad"
+  },
+  {
+   "id": 227,
+   "name": "Garden Salad",
+   "desc": "lettuce, cucumber, tomatoes, jullenne carrot…",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": true,
+   "section": "Salad"
+  },
+  {
+   "id": 228,
+   "name": "Chicken Salad",
+   "desc": "chicken, tomato, mayonnaise, soya sauce, lettuce…",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": false,
+   "section": "Salad"
+  },
+  {
+   "id": 229,
+   "name": "Tuna Salad",
+   "desc": "Tuna, Cabbage, tomato, Mayonnaise.",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": true,
+   "section": "Salad"
+  },
+  {
+   "id": 91,
+   "name": "cup cake",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 92,
+   "name": "capati",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 93,
+   "name": "Meatball",
+   "desc": "",
+   "price": 700,
+   "prices": [
+    700
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 97,
+   "name": "Cheese &ham sandwich",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 220,
+   "name": "Crepe",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 221,
+   "name": "Capati Wrap/Eggs",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 222,
+   "name": "Beef Lasagna",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 223,
+   "name": "Lasagna vegetables",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 224,
+   "name": "Sandwich with Avocado",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 225,
+   "name": "Spring Rolls Chicken",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 226,
+   "name": "Spring Roll Vegetables",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 247,
+   "name": "Hot Dog",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 290,
+   "name": "Sambusa",
+   "desc": "",
+   "price": 700,
+   "prices": [
+    700
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 361,
+   "name": "Eggs",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 366,
+   "name": "Gozette",
+   "desc": "",
+   "price": 700,
+   "prices": [
+    700
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 373,
+   "name": "Amandazi",
+   "desc": "",
+   "price": 400,
+   "prices": [
+    400
+   ],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 374,
+   "name": "Mentos",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 384,
+   "name": "chin chin",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 385,
+   "name": "Flied egg",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": false,
+   "section": "Snacks"
+  },
+  {
+   "id": 406,
+   "name": "Small Pizza",
+   "desc": "",
+   "price": 700,
+   "prices": [
+    700
+   ],
+   "veg": true,
+   "section": "Snacks"
+  },
+  {
+   "id": 111,
+   "name": "Iced Cappuccino",
+   "desc": "",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 112,
+   "name": "Iced Mocha",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 113,
+   "name": "Iced Black Coffee All",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 114,
+   "name": "Vanilla",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 186,
+   "name": "Hot Milk With Honey",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 289,
+   "name": "Pineapple Juice",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 295,
+   "name": "Mocktail",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 318,
+   "name": "Glass Juice",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 387,
+   "name": "Hot water",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 396,
+   "name": "Refer",
+   "desc": "nnm",
+   "price": null,
+   "prices": [
+    null
+   ],
+   "veg": true,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 397,
+   "name": "Refer",
+   "desc": "nnm",
+   "price": null,
+   "prices": [
+    null
+   ],
+   "veg": true,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 398,
+   "name": "Refer",
+   "desc": "nnm",
+   "price": null,
+   "prices": [],
+   "veg": true,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 465,
+   "name": "Pinta Negra White",
+   "desc": "",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 466,
+   "name": "Four Cousins",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": false,
+   "section": "FreshDrinks"
+  },
+  {
+   "id": 115,
+   "name": "Strawberry",
+   "desc": "Milkshake",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 116,
+   "name": "Chocolate",
+   "desc": "Milkshake",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 321,
+   "name": "Mixed Milkshake",
+   "desc": "Sweet",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 322,
+   "name": "Vanilla Milkshake",
+   "desc": "Sweet one",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 323,
+   "name": "Chocolate Milkshake",
+   "desc": "Sweet one",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 324,
+   "name": "Strawberry Milkshake",
+   "desc": "Sweet One",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 346,
+   "name": "Caramel Milkshake",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 347,
+   "name": "Mocha Milkshake",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Milk Shakes"
+  },
+  {
+   "id": 118,
+   "name": "Juice inyange",
+   "desc": "Mango, Apple.",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 119,
+   "name": "Energy",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 120,
+   "name": "Panache",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 121,
+   "name": "NOVIDA",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 122,
+   "name": "Mountain Juice",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 123,
+   "name": "Pepsi",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 124,
+   "name": "Embe",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 125,
+   "name": "Fruit Ville",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 267,
+   "name": "Milk Inyange",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 269,
+   "name": "Tonic",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 270,
+   "name": "Fanta",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 320,
+   "name": "Nile Water",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 355,
+   "name": "Mitzig",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": true,
+   "section": "Baverage"
+  },
+  {
+   "id": 376,
+   "name": "Amstel",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 381,
+   "name": "Hot water with lemon",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 388,
+   "name": "Guiness",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 390,
+   "name": "JAMESON Short",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 391,
+   "name": "heineken",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 392,
+   "name": "Smirnoff ice",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 395,
+   "name": "Petit Skol",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 407,
+   "name": "Billiard Token",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 409,
+   "name": "Dunhill",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 414,
+   "name": "Guaranna",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 430,
+   "name": "Exo",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 431,
+   "name": "Grand Mutzig",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 435,
+   "name": "Bavaria",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 444,
+   "name": "INYANGE JUICE 1 Little",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 450,
+   "name": "Champagne",
+   "desc": "",
+   "price": 15000,
+   "prices": [
+    15000
+   ],
+   "veg": false,
+   "section": "Baverage"
+  },
+  {
+   "id": 126,
+   "name": "Afrish Smoothie",
+   "desc": "",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 127,
+   "name": "Mango Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 128,
+   "name": "Strawberry Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 136,
+   "name": "Passion Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 138,
+   "name": "Tree Tomato Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 139,
+   "name": "PineApple Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 141,
+   "name": "Peanut Butter Banana Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 142,
+   "name": "Mango Lassi Banana Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 143,
+   "name": "Fresh Tropical Fruits Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 144,
+   "name": "Green Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 345,
+   "name": "Date And Banana Smoothie",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Smoothies"
+  },
+  {
+   "id": 129,
+   "name": "African Tea",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 130,
+   "name": "Spice Tea",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 131,
+   "name": "Hot Chocolate",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 204,
+   "name": "Hot Milk",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 205,
+   "name": "English Tea",
+   "desc": "",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 209,
+   "name": "Golden Tea",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 210,
+   "name": "Black Tea",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 211,
+   "name": "Green Tea",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 212,
+   "name": "Lemon Tea",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 213,
+   "name": "Hibiscus Tea",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 214,
+   "name": "Ginger Tea",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 215,
+   "name": "Indian Tea",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 339,
+   "name": "iced Black Tea",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 341,
+   "name": "Karafu Tea",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 343,
+   "name": "Mint Tea",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 344,
+   "name": "Mucayicayii Tea",
+   "desc": "",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 348,
+   "name": "Spice Fresh Lemonade",
+   "desc": "With Ginger",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Tea"
+  },
+  {
+   "id": 132,
+   "name": "Water Inyange",
+   "desc": "",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "Water"
+  },
+  {
+   "id": 145,
+   "name": "StrawBerry fresh Juice",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 147,
+   "name": "Mango Fresh Juice",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 149,
+   "name": "Water melon Juice",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": true,
+   "section": "Juice"
+  },
+  {
+   "id": 151,
+   "name": "Pineappple Fresh Juice",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 152,
+   "name": "Orange Juice",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 153,
+   "name": "Fresh tomato Juice",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 154,
+   "name": "Passion Juice",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 155,
+   "name": "Detox",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 268,
+   "name": "Mirinda",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Juice"
+  },
+  {
+   "id": 157,
+   "name": "Iced Latte",
+   "desc": "",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": false,
+   "section": "Iced Drinks"
+  },
+  {
+   "id": 160,
+   "name": "Iced Mojitos",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Iced Drinks"
+  },
+  {
+   "id": 410,
+   "name": "Tequila short",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Iced Drinks"
+  },
+  {
+   "id": 411,
+   "name": "savanna",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "Iced Drinks"
+  },
+  {
+   "id": 161,
+   "name": "Lemonade Mojito",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 163,
+   "name": "Mango Mojito",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 165,
+   "name": "Passion Mojito",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 166,
+   "name": "Water melon Mojito",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 168,
+   "name": "Tree Tomato Mojito",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 169,
+   "name": "Pineapple Mojito",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 170,
+   "name": "Orange Mojito",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 172,
+   "name": "Strawberry Mojito",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Mojitos"
+  },
+  {
+   "id": 174,
+   "name": "Maseduane",
+   "desc": "Mixed fruits of pineapple, mango, banana…",
+   "price": 6000,
+   "prices": [
+    6000
+   ],
+   "veg": true,
+   "section": "Fruits"
+  },
+  {
+   "id": 178,
+   "name": "Plate of Fruits",
+   "desc": "Pineapple , Watermelon,bananas, orange…",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": true,
+   "section": "Fruits"
+  },
+  {
+   "id": 179,
+   "name": "Single Shot espresso",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 180,
+   "name": "Double Shot Espresso",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 181,
+   "name": "Lungo",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 183,
+   "name": "Amercano",
+   "desc": "One shot of espresso and Hot Water",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 184,
+   "name": "Latte Macchiato",
+   "desc": "Steamed Syrup…",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 189,
+   "name": "Flat White",
+   "desc": "Two Shots of espresso & Milk.",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 190,
+   "name": "Cortado",
+   "desc": "Two shots of espresso with equal amount of milk",
+   "price": 2000,
+   "prices": [
+    2000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 194,
+   "name": "Cappuccino",
+   "desc": "Espresso with steamed milk & froth foam",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 196,
+   "name": "Regular",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 198,
+   "name": "Cafe Mocha",
+   "desc": "Espresso blended with semi-sweet chocolate strawbe…",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 201,
+   "name": "Hot Chocolate",
+   "desc": "Sweet chocolate mixed with steam milk & frothy foa…",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 202,
+   "name": "African Coffee",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 208,
+   "name": "English coffee",
+   "desc": "",
+   "price": 3500,
+   "prices": [
+    3500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 291,
+   "name": "Caffee lattee",
+   "desc": "delicious",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 328,
+   "name": "Piccolo coffee",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 329,
+   "name": "Afrogato Coffee",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 330,
+   "name": "Ristreto Coffee",
+   "desc": "",
+   "price": 1500,
+   "prices": [
+    1500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 331,
+   "name": "Magic Coffee",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 332,
+   "name": "Spanish Lattee",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 333,
+   "name": "carameli latte",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 334,
+   "name": "Espresso Machiato",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 335,
+   "name": "Flat White Coffee",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 336,
+   "name": "Vanilla Latte",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 380,
+   "name": "Black coffee",
+   "desc": "",
+   "price": 2500,
+   "prices": [
+    2500
+   ],
+   "veg": false,
+   "section": "Coffee"
+  },
+  {
+   "id": 230,
+   "name": "Beef Boillon",
+   "desc": "",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "Boillon"
+  },
+  {
+   "id": 239,
+   "name": "Chicken boilon",
+   "desc": "tender of chicken boiled with potatoes…",
+   "price": 7000,
+   "prices": [
+    7000
+   ],
+   "veg": false,
+   "section": "Buffet"
+  },
+  {
+   "id": 242,
+   "name": "Fish boilon",
+   "desc": "Fish boiled with potatoes,bananas,and vegetables",
+   "price": null,
+   "prices": [],
+   "veg": false,
+   "section": "Buffet"
+  },
+  {
+   "id": 317,
+   "name": "Steak salad with chips",
+   "desc": "",
+   "price": 10000,
+   "prices": [
+    10000
+   ],
+   "veg": true,
+   "section": "Buffet"
+  },
+  {
+   "id": 408,
+   "name": "Extra Meat",
+   "desc": "",
+   "price": 1000,
+   "prices": [
+    1000
+   ],
+   "veg": true,
+   "section": "Buffet"
+  },
+  {
+   "id": 325,
+   "name": "banana",
+   "desc": "",
+   "price": 200,
+   "prices": [
+    200
+   ],
+   "veg": true,
+   "section": "Dessert"
+  },
+  {
+   "id": 437,
+   "name": "lemon",
+   "desc": "",
+   "price": 500,
+   "prices": [
+    500
+   ],
+   "veg": true,
+   "section": "Dessert"
+  },
+  {
+   "id": 337,
+   "name": "iced caramel latte",
+   "desc": "",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Iced Coffee"
+  },
+  {
+   "id": 338,
+   "name": "Iced Amercano",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Iced Coffee"
+  },
+  {
+   "id": 340,
+   "name": "Iced Vanilla Latte",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Iced Coffee"
+  },
+  {
+   "id": 449,
+   "name": "Iced Spanish",
+   "desc": "Coffee",
+   "price": 5000,
+   "prices": [
+    5000
+   ],
+   "veg": false,
+   "section": "Iced Coffee"
+  },
+  {
+   "id": 342,
+   "name": "Itende Special Hot",
+   "desc": "",
+   "price": 4000,
+   "prices": [
+    4000
+   ],
+   "veg": false,
+   "section": "Special Drinks"
+  },
+  {
+   "id": 360,
+   "name": "Wine/One Glass",
+   "desc": "Sweet Wine",
+   "price": 8000,
+   "prices": [
+    8000
+   ],
+   "veg": false,
+   "section": "Special Drinks"
+  },
+  {
+   "id": 415,
+   "name": "Tusker",
+   "desc": "",
+   "price": 3000,
+   "prices": [
+    3000
+   ],
+   "veg": false,
+   "section": "Special Drinks"
+  },
+  {
+   "id": 433,
+   "name": "Booking Place",
+   "desc": "",
+   "price": 50000,
+   "prices": [
+    50000
+   ],
+   "veg": true,
+   "section": "Special Drinks"
+  }
+ ]
+}

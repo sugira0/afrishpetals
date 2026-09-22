@@ -1,0 +1,107 @@
+/* ═══ WHATSAPP ═══
+   A small, quiet circle in the brand's deep green with a gold hairline; the
+   WhatsApp green is used only on the glyph for instant recognition. */
+.wa {
+  position: fixed;
+  z-index: 96;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.wa.is-away {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+.wa__link {
+  position: relative;
+  display: block; /* the link is exactly the circle — the tooltip must never widen its hit area */
+  width: 52px;
+  height: 52px;
+  outline-offset: 6px;
+  border-radius: 999px;
+}
+.wa__btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #123a2f, var(--color-bg-2));
+  border: 1px solid rgba(245, 154, 69, 0.55);
+  box-shadow: 0 10px 26px -10px rgba(0, 0, 0, 0.7);
+  color: #25d366; /* WhatsApp brand green, on the glyph only */
+  transition: border-color 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+.wa__btn svg {
+  width: 26px;
+  height: 26px;
+}
+.wa__link:hover .wa__btn,
+.wa__link:focus-visible .wa__btn {
+  border-color: var(--color-gold-light);
+  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, 0.8), 0 0 0 4px rgba(224, 112, 31, 0.12);
+}
+
+/* Tooltip pill: slides in from the right, 8px travel, under 400ms */
+.wa__tip {
+  position: absolute;
+  right: calc(100% + 0.7rem);
+  top: 50%;
+  translate: 0 -50%;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  background: var(--color-deep);
+  border: 1px solid rgba(245, 154, 69, 0.35);
+  color: var(--color-cream);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+@media (hover: hover) {
+  .wa__link:hover .wa__tip,
+  .wa__link:focus-visible .wa__tip {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.wa__link:focus-visible .wa__tip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Inline variant (used inside confirmation panels) */
+.btn--wa {
+  --btn-fill: #25d366;
+  --btn-fg: var(--color-cream);
+  --btn-fg-hover: var(--color-deep);
+}
+.btn--wa .btn__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: #25d366;
+  transition: color 0.4s var(--ease-out);
+}
+.btn--wa:hover .btn__icon,
+.btn--wa:focus-visible .btn__icon {
+  color: var(--color-deep);
+}
+
+@media (max-width: 767.98px) {
+  .wa__link { width: 48px; height: 48px; }
+  .wa__btn { width: 48px; height: 48px; }
+  .wa__btn svg { width: 24px; height: 24px; }
+  .wa__tip { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa__tip,
+  .wa { transition: none; }
+}

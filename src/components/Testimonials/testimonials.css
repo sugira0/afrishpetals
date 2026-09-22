@@ -1,0 +1,94 @@
+/* ═══ TESTIMONIALS ═══ */
+.tst {
+  position: relative;
+  z-index: 2;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  padding-block: var(--section-y);
+  overflow: hidden;
+}
+.tst .eyebrow { color: #a8480c; }
+.tst__mark {
+  position: absolute;
+  left: 2vw;
+  top: -4vw;
+  font-family: var(--font-serif);
+  font-size: clamp(16rem, 42vw, 46rem);
+  line-height: 1;
+  color: rgba(10, 21, 18, 0.06);
+  pointer-events: none;
+  user-select: none;
+}
+.tst__inner { position: relative; }
+.tst__fig { margin: 2rem 0 0; }
+.tst__quote {
+  margin: 0;
+  max-width: 22em;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2rem, 5.2vw, 5.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  min-height: 5.4em;
+}
+.tst__w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.tst__w-in { display: inline-block; will-change: transform; }
+.tst__by {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+}
+.tst__by::before {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: #a8480c;
+}
+.tst__name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+}
+.tst__ctx { color: rgba(10, 21, 18, 0.55); }
+.tst__foot {
+  margin-top: clamp(2.4rem, 5vw, 4.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+}
+.tst__nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.tst__nav button {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(10, 21, 18, 0.35);
+  border-radius: 50%;
+  transition: background-color 0.4s var(--ease-out), color 0.4s;
+}
+.tst__nav button:hover { background: var(--color-ink); color: var(--color-cream); }
+.tst__nav svg { width: 18px; height: 18px; }
+.tst__count { min-width: 4.6em; text-align: center; }
+.tst :focus-visible { outline-color: var(--color-bg-3); }
+
+.tst__emblem {
+  position: absolute;
+  right: var(--gutter);
+  top: clamp(2rem, 6vw, 5rem);
+  width: clamp(84px, 10vw, 160px);
+  height: auto;
+  z-index: 1;
+}

@@ -1,0 +1,217 @@
+/* ═══ SIGNATURE CREATIONS ═══
+   Default = stacked editorial list (mobile / reduced motion).
+   `.is-pinned` (added by JS on desktop) = single pinned stage. */
+.sig {
+  position: relative;
+  z-index: 1;
+  background: var(--color-bg);
+  color: var(--color-cream);
+  padding-top: calc(var(--story-overlap) + var(--section-y) * 0.5);
+  margin-top: calc(-1 * var(--story-overlap));
+}
+.sig__stage {
+  position: relative;
+  overflow: hidden;
+}
+.sig__fern {
+  position: absolute;
+  z-index: 0;
+  width: 26vw;
+  min-width: 140px;
+  right: -5vw;
+  top: 4%;
+  transform: rotate(18deg);
+  --leaf-line: rgba(224, 112, 31, 0.16);
+  pointer-events: none;
+}
+.sig__head {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 3rem;
+}
+.sig__title {
+  margin-top: 1.2rem;
+}
+.sig__note {
+  margin: 2rem var(--gutter) 0;
+}
+
+.sig__items {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 10vw, 8rem);
+}
+.sig__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+}
+.sig__media {
+  position: relative;
+  z-index: 1;
+}
+.sig__media .img-mask {
+  width: 100%;
+}
+.sig__support {
+  display: none;
+}
+.sig__text {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+.sig__cat {
+  margin: 0;
+  color: var(--color-gold);
+}
+.sig__name {
+  margin: 0;
+  font-size: clamp(2.6rem, 8vw, 5.6rem);
+}
+.sig__desc {
+  margin: 0;
+}
+.sig__price {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--color-gold-light);
+}
+.sig__ghost,
+.sig__nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sig__item { grid-template-columns: 1.1fr 1fr; align-items: center; gap: 4vw; }
+  .sig__item:nth-child(even) .sig__media { order: 2; }
+}
+
+/* ── Pinned stage ── */
+.sig.is-pinned {
+  padding-top: calc(var(--story-overlap) + 2rem);
+  padding-bottom: 0;
+}
+.sig.is-pinned .sig__stage {
+  height: 100svh;
+  min-height: 640px;
+  display: block;
+}
+.sig.is-pinned .sig__head {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--nav-h) + 1.5rem);
+  margin: 0;
+  pointer-events: none;
+}
+.sig.is-pinned .sig__title {
+  font-size: clamp(2.4rem, 4.2vw, 4.6rem);
+}
+.sig.is-pinned .sig__note {
+  position: absolute;
+  z-index: 5;
+  left: var(--gutter);
+  bottom: 5.6rem;
+  margin: 0;
+}
+.sig.is-pinned .sig__items {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.sig.is-pinned .sig__item {
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding-inline: var(--gutter);
+  visibility: hidden;
+}
+.sig.is-pinned .sig__media {
+  position: absolute;
+  right: var(--gutter);
+  top: calc(var(--nav-h) + 1rem);
+  bottom: 4.5rem;
+  width: min(44vw, 74svh);
+}
+.sig.is-pinned .sig__media .img-mask {
+  height: 100%;
+  aspect-ratio: auto !important;
+}
+.sig.is-pinned .sig__media .img-inner img {
+  height: 100%;
+}
+.sig.is-pinned .sig__support {
+  display: block;
+  position: absolute;
+  z-index: 4;
+  right: calc(var(--gutter) + min(44vw, 74svh) - 4vw);
+  bottom: 6rem;
+  width: clamp(120px, 14vw, 230px);
+  border: 6px solid var(--color-bg);
+  box-shadow: 0 30px 60px -30px #000;
+  will-change: transform;
+}
+.sig.is-pinned .sig__support .img-mask {
+  aspect-ratio: 4 / 5 !important;
+}
+.sig.is-pinned .sig__text {
+  position: absolute;
+  left: var(--gutter);
+  top: 58%;
+  translate: 0 -50%;
+  width: min(36vw, 34rem);
+}
+.sig.is-pinned .sig__name {
+  font-size: clamp(2.8rem, 5.4vw, 6.2rem);
+}
+.sig.is-pinned .sig__ghost {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  left: 38vw;
+  bottom: 1vh;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(10rem, 26vw, 30rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(224, 112, 31, 0.16);
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  pointer-events: none;
+}
+.sig.is-pinned .sig__ghost span {
+  display: block;
+}
+.sig.is-pinned .sig__nav {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 5;
+  left: var(--gutter);
+  bottom: 2.4rem;
+}
+.sig__nav li {
+  --on: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 3.4rem;
+  color: rgba(243, 235, 221, calc(0.35 + 0.65 * var(--on)));
+}
+.sig__nav-bar {
+  display: block;
+  height: 1px;
+  background: var(--color-gold-light);
+  transform-origin: left;
+  transform: scaleX(calc(0.25 + 0.75 * var(--on)));
+}

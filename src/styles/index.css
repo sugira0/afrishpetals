@@ -1,0 +1,409 @@
+@import 'tailwindcss';
+
+/* ─────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   Breakpoints are deliberate composition changes, not just widths:
+   sm 576  – large phones      md 768  – tablet portrait (editorial stack ends)
+   lg 1024 – desktop begins (pinned + horizontal scenes)
+   xl 1280 – full composition   2xl 1680 – ultra-wide
+   ───────────────────────────────────────────────────────────── */
+@theme {
+  --breakpoint-sm: 36rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 105rem;
+
+  --color-bg: #071a16;
+  --color-bg-2: #0b211b;
+  --color-bg-3: #102a22;
+  --color-deep: #030908;
+  --color-charcoal: #0d1211;
+  /* Brand accent = dark orange (from the logo's Africa). Token names kept as `gold` so existing classes keep working. */
+  --color-gold: #e0701f;
+  --color-gold-light: #f59a45;
+  --color-cream: #f3ebdd;
+  --color-ivory: #faf5ea;
+  --color-ink: #0a1512;
+
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+:root {
+  --gutter: clamp(20px, 4.2vw, 72px);
+  --section-y: clamp(96px, 13vw, 220px);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --hairline: rgba(245, 154, 69, 0.22);
+  --hairline-dark: rgba(10, 21, 18, 0.16);
+  --nav-h: 84px;
+  --story-overlap: clamp(24px, 4vw, 64px); /* how far Story's diagonal edge rides up over the hero */
+}
+
+/* ─────────────  BASE  ───────────── */
+html {
+  background: var(--color-deep);
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+::selection {
+  background: var(--color-gold);
+  color: var(--color-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold-light);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.on-light :focus-visible {
+  outline-color: var(--color-bg-3);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 200;
+  background: var(--color-gold);
+  color: var(--color-deep);
+  padding: 12px 18px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: top 0.3s var(--ease-out);
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Fine film grain over the whole page: one static tile, no blend modes. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ─────────────  TYPOGRAPHY  ───────────── */
+.font-display {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+.display-xl {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+  font-size: clamp(3.4rem, 9.2vw, 10.5rem);
+}
+.display-lg {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  font-size: clamp(2.8rem, 6.6vw, 7.5rem);
+}
+.display-md {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  font-size: clamp(2.1rem, 4vw, 4.4rem);
+}
+.display-sm {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.05;
+  font-size: clamp(1.6rem, 2.4vw, 2.5rem);
+}
+.italic-gold,
+.line em,
+.line-inner em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-gold);
+}
+.on-light .line em,
+.on-light .line-inner em,
+.on-light .italic-gold {
+  color: #a8480c;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9em;
+  font-size: 0.69rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+.eyebrow::before {
+  content: '';
+  width: 2.4em;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.eyebrow--plain::before {
+  display: none;
+}
+
+.body-copy {
+  font-size: clamp(0.98rem, 1.1vw, 1.12rem);
+  line-height: 1.75;
+  color: rgba(243, 235, 221, 0.72);
+  max-width: 34em;
+}
+.on-light .body-copy {
+  color: rgba(10, 21, 18, 0.72);
+}
+
+.meta {
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+/* Line-reveal heading primitives (see ui/Split.jsx + animations/textAnimations.js) */
+.line {
+  display: block;
+  overflow: hidden;
+  /* room for descenders / accents without changing rhythm */
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.line-inner {
+  display: block;
+  will-change: transform;
+}
+
+/* ─────────────  LAYOUT  ───────────── */
+.container-x {
+  width: 100%;
+  padding-inline: var(--gutter);
+  margin-inline: auto;
+  max-width: 1900px;
+}
+.section {
+  position: relative;
+}
+
+/* ─────────────  BUTTONS  ─────────────
+   Outline button whose gold fill grows in from the left on hover,
+   arrow nudges 5px, label colour flips. Transform-only. */
+.btn {
+  --btn-fill: var(--color-gold);
+  --btn-fg: var(--color-cream);
+  --btn-fg-hover: var(--color-deep);
+  --btn-border: rgba(224, 112, 31, 0.6);
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.05rem 1.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--btn-fg);
+  border: 1px solid var(--btn-border);
+  overflow: hidden;
+  transition:
+    color 0.5s var(--ease-out),
+    border-color 0.5s var(--ease-out);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--btn-fill);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s var(--ease-out);
+}
+.btn:hover,
+.btn:focus-visible {
+  color: var(--btn-fg-hover);
+  border-color: var(--btn-fill);
+}
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: scaleX(1);
+}
+.btn__label {
+  transition: transform 0.5s var(--ease-out);
+}
+.btn:hover .btn__label {
+  transform: translateX(-2px);
+}
+.btn__arrow {
+  width: 1.05rem;
+  height: 1.05rem;
+  transition: transform 0.5s var(--ease-out);
+}
+.btn:hover .btn__arrow,
+.btn:focus-visible .btn__arrow {
+  transform: translateX(5px);
+}
+
+.btn--solid {
+  --btn-fill: var(--color-cream);
+  --btn-fg: var(--color-deep);
+  --btn-fg-hover: var(--color-deep);
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.btn--dark {
+  --btn-fg: var(--color-ink);
+  --btn-fg-hover: var(--color-cream);
+  --btn-fill: var(--color-bg-3);
+  --btn-border: rgba(10, 21, 18, 0.45);
+}
+.btn--sm {
+  padding: 0.8rem 1.2rem;
+  font-size: 0.64rem;
+}
+
+/* Quiet text link with an underline that draws */
+.link-line {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+}
+.link-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+  transform-origin: right;
+  transition: transform 0.6s var(--ease-out);
+}
+.link-line:hover::after {
+  transform: scaleX(0.3);
+  transform-origin: left;
+}
+.link-line .btn__arrow {
+  transition: transform 0.5s var(--ease-out);
+}
+.link-line:hover .btn__arrow {
+  transform: translateX(5px);
+}
+
+/* ─────────────  IMAGE PRIMITIVES  ───────────── */
+.img-mask {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-3);
+}
+.img-mask > img,
+.img-mask > .img-inner > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-inner {
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+/* ─────────────  REDUCED MOTION  ───────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+  .spin-slow {
+    animation: none !important;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin 38s linear infinite;
+}

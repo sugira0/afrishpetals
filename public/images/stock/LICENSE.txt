@@ -1,0 +1,3 @@
+Stock placeholder photographs from Unsplash (https://unsplash.com/license): free to use, including commercially.
+They are NOT photographs of Afrish Petals. Replace them with the restaurant's own photography (see src/data/images.js)
+and then delete this folder.

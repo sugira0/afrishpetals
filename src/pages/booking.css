@@ -1,0 +1,103 @@
+/* ═══ /book — reservation journey ═══ */
+.bk {
+  position: relative;
+  background: var(--color-deep);
+  color: var(--color-cream);
+  min-height: 100svh;
+}
+.bk__bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(90% 80% at 70% 30%, #0f2f26 0%, var(--color-bg) 60%, #030a08 100%);
+}
+
+/* Visual (mobile: band on top, desktop: sticky left half) */
+.bk-visual {
+  position: relative;
+  z-index: 1;
+  height: 46svh;
+  min-height: 21rem;
+  padding: calc(var(--nav-h) + 1rem) var(--gutter) 1.6rem;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.bk-visual__frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.bk-visual__img { position: absolute; inset: 0; will-change: transform, opacity; }
+.bk-visual__img img { width: 100%; height: 100%; object-fit: cover; }
+.bk-visual__shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(3, 9, 8, 0.5) 0%, rgba(3, 9, 8, 0.25) 40%, rgba(3, 9, 8, 0.9) 100%);
+}
+.bk-visual__leaf {
+  position: absolute;
+  z-index: 1;
+  width: 40vw;
+  right: -12vw;
+  top: -6vw;
+  transform: rotate(200deg);
+  pointer-events: none;
+  --leaf-b: #1b5946;
+}
+.bk-visual__leaf svg { display: block; width: 100%; height: auto; }
+.bk-visual__copy { position: relative; z-index: 2; max-width: 34rem; }
+.bk-title {
+  margin: 0.8rem 0 0;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(3rem, 14vw, 5.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.bk-title em { color: var(--color-gold); }
+.bk-sub {
+  margin: 1rem 0 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: rgba(243, 235, 221, 0.85);
+}
+
+/* Panel */
+.bk-panel {
+  position: relative;
+  z-index: 2;
+  padding: 2rem var(--gutter) 7rem; /* extra bottom room keeps the WhatsApp button clear of the submit row */
+  background: var(--color-bg);
+}
+.bk-panel__inner { max-width: 40rem; margin-inline: auto; }
+.bk-panel__foot { margin: 2.4rem 0 0; font-size: 0.9rem; color: rgba(243, 235, 221, 0.6); display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+
+@media (min-width: 1024px) {
+  .bk { display: grid; grid-template-columns: 46vw 1fr; }
+  .bk-visual {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    padding: calc(var(--nav-h) + 2rem) var(--gutter) 3.6rem;
+  }
+  .bk-title { font-size: clamp(3.4rem, 6.6vw, 8rem); }
+  .bk-visual__shade {
+    background:
+      linear-gradient(90deg, rgba(3, 9, 8, 0.25), rgba(7, 26, 22, 0.95) 100%),
+      linear-gradient(180deg, rgba(3, 9, 8, 0.3) 0%, transparent 40%, rgba(3, 9, 8, 0.85) 100%);
+  }
+  .bk-panel {
+    display: flex;
+    align-items: center;
+    min-height: 100svh;
+    padding: calc(var(--nav-h) + 3rem) clamp(2rem, 5vw, 6rem) 5rem 2rem;
+    background: transparent;
+  }
+  .bk-panel__inner { width: 100%; margin: 0; }
+}
+
+.bk-visual__logo { display: block; width: clamp(84px, 9vw, 130px); height: auto; margin-bottom: 1rem; }

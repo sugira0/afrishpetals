@@ -1,0 +1,28 @@
+.pv {
+  padding: calc(var(--nav-h) + 3rem) var(--gutter) 6rem;
+  background: radial-gradient(90% 60% at 70% 0%, #0f2f26 0%, var(--color-bg) 60%, #030a08 100%);
+  min-height: 100svh;
+}
+.pv__inner { max-width: 44rem; margin-inline: auto; display: flex; flex-direction: column; gap: 1rem; }
+.pv__logo { width: clamp(72px, 8vw, 100px); height: auto; }
+.pv__title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pv__lead { margin: 0.4rem 0 1rem; font-family: var(--font-serif); font-size: 1.35rem; color: rgba(243, 235, 221, 0.85); }
+.pv h2 {
+  margin: 1.6rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+.pv p { margin: 0; line-height: 1.75; color: rgba(243, 235, 221, 0.8); }
+.pv p a { color: var(--color-gold-light); text-decoration: underline; text-underline-offset: 3px; }
+.pv__back { margin-top: 2.4rem !important; }

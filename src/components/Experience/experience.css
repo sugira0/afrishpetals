@@ -1,0 +1,180 @@
+/* ═══ EXPERIENCE ═══
+   Default: vertical editorial stack. `.is-horizontal` (desktop + motion): pinned sideways track. */
+.exp {
+  position: relative;
+  z-index: 2;
+  background: var(--color-bg);
+  color: var(--color-cream);
+  padding-block: var(--section-y);
+  overflow: hidden;
+}
+.exp__track {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 12vw, 7rem);
+}
+.exp__intro {
+  position: relative;
+  padding-inline: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+.exp__heading { font-size: clamp(3.2rem, 13vw, 6rem); }
+.exp__hint,
+.exp__spin,
+.exp__progress { display: none; }
+
+.exp__panel {
+  position: relative;
+  padding-inline: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.exp__num {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: 5rem;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(224, 112, 31, 0.5);
+}
+.exp__img { width: 100%; }
+.exp__title { margin: 0 0 0.8rem; }
+.exp__text { margin: 0; }
+
+/* ── Horizontal mode ── */
+.exp.is-horizontal {
+  padding-block: 0;
+  overflow: visible;
+}
+.exp.is-horizontal .exp__viewport {
+  position: relative;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.exp.is-horizontal .exp__track {
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+  width: max-content;
+  padding-right: 12vw;
+  will-change: transform;
+}
+.exp.is-horizontal .exp__intro {
+  flex: none;
+  width: min(62vw, 60rem);
+  height: 100%;
+  justify-content: center;
+  padding-left: var(--gutter);
+  padding-right: 6vw;
+}
+.exp.is-horizontal .exp__heading { font-size: clamp(4rem, 8.4vw, 10rem); }
+.exp.is-horizontal .exp__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-gold);
+  margin: 1rem 0 0;
+}
+.exp__hint-line {
+  width: 4rem;
+  height: 1px;
+  background: currentColor;
+  animation: hint 2.2s var(--ease-io) infinite;
+  transform-origin: left;
+}
+@keyframes hint {
+  0%, 100% { transform: scaleX(0.3); }
+  50% { transform: scaleX(1); }
+}
+.exp.is-horizontal .exp__spin {
+  display: block;
+  position: absolute;
+  width: 22vw;
+  right: -8vw;
+  bottom: 2vh;
+  color: rgba(224, 112, 31, 0.16);
+}
+
+.exp.is-horizontal .exp__panel {
+  flex: none;
+  height: 100%;
+  width: 60vw;
+  padding: 0 4vw;
+  display: block;
+}
+.exp.is-horizontal .exp__panel--b { width: 70vw; }
+/* Two alternating compositions so the track never reads as a row of cards */
+.exp.is-horizontal .exp__panel--a .exp__img {
+  position: absolute;
+  left: 4vw;
+  top: 14svh;
+  width: 32vw;
+  height: 66svh;
+  aspect-ratio: auto !important;
+  border-radius: 999px 999px 0 0;
+}
+.exp.is-horizontal .exp__panel--b .exp__img {
+  position: absolute;
+  left: 6vw;
+  top: 22svh;
+  width: 36vw;
+  height: 56svh;
+  aspect-ratio: auto !important;
+}
+.exp.is-horizontal .exp__num {
+  position: absolute;
+  z-index: 3;
+  font-size: clamp(8rem, 18vw, 22rem);
+  top: 4svh;
+  right: 2vw;
+  pointer-events: none;
+}
+.exp.is-horizontal .exp__panel--b .exp__num { top: auto; bottom: 4svh; right: auto; left: 0; }
+.exp.is-horizontal .exp__copy {
+  position: absolute;
+  z-index: 4;
+  width: min(22rem, 24vw);
+}
+.exp.is-horizontal .exp__panel--a .exp__copy { left: 31vw; bottom: 10svh; }
+.exp.is-horizontal .exp__panel--b .exp__copy { left: 45vw; top: 34svh; width: min(22rem, 21vw); }
+.exp.is-horizontal .exp__title { font-size: clamp(2.2rem, 3.6vw, 4rem); }
+.exp.is-horizontal .exp__img img { width: 100%; height: 100%; }
+
+.exp.is-horizontal .exp__progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: 3.2svh;
+  color: rgba(243, 235, 221, 0.6);
+}
+.exp__bar {
+  flex: 1;
+  height: 1px;
+  background: rgba(243, 235, 221, 0.16);
+  overflow: hidden;
+}
+.exp__bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--color-gold-light);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* Tablet: two-up stack */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .exp__panel:nth-child(even) .exp__img { width: 78%; align-self: flex-end; }
+  .exp__panel { max-width: 44rem; }
+  .exp__panel:nth-child(even) { margin-left: auto; }
+}
