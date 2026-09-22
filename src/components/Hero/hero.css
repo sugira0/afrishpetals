@@ -524,3 +524,28 @@
   .hero__leaf-sway,
   .hero__petal { animation: none; }
 }
+
+/* Landscape phones (short viewport): the cover still fits in one width-driven column,
+   but there isn't enough HEIGHT for the full stack — trim the secondary elements and
+   tighten the rhythm so the tagline and actions sit comfortably instead of trailing
+   far below the fold. */
+@media (max-height: 520px) and (orientation: landscape) {
+  /* the 620px floor below is sized for portrait phones; without overriding it here the hero
+     stays 620px tall regardless of the real (much shorter) viewport, pushing .hero__foot far
+     past the fold even though everything inside is absolutely positioned and would otherwise
+     fit */
+  .hero { min-height: 340px; --word: min(15vw, 15svh); --plate: min(30svh, 22vw); }
+  .hero__counter,
+  .hero__meta { display: none; }
+  .hero__word--a,
+  .hero__word--a-front { top: calc(var(--nav-h) + 1.2svh); }
+  .hero__word--b,
+  .hero__word--b-front { bottom: 1.2svh; }
+  .hero__foot {
+    bottom: 1.2svh;
+    gap: 0.6rem;
+  }
+  .hero__tagline { font-size: 1.05rem; }
+  .hero__actions { gap: 1rem; }
+  .hero__label-wrap { top: calc(var(--nav-h) + 0.6svh); }
+}

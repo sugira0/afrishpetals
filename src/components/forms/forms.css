@@ -251,7 +251,10 @@ input[type='date'].field__control::-webkit-calendar-picker-indicator {
 @media (max-width: 639.98px) {
   /* on phones only the active label shows; numbers carry the rest */
   .steps__item:not(.is-active) .steps__label { display: none; }
-  .steps__list { justify-content: flex-start; gap: 1.4rem; }
+  .steps__list { justify-content: flex-start; gap: 0.9rem; }
+  /* number-only buttons are narrow by content alone — pad the tap target out to a comfortable width,
+     staying under half the gap so adjacent targets never overlap */
+  .steps__btn { padding-inline: 0.4rem; margin-inline: -0.4rem; }
 }
 
 /* ── Step ── */

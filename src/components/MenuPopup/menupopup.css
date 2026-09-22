@@ -37,6 +37,7 @@
 .mp__link.is-popping { animation: mp-pop 0.7s var(--ease-out); }
 
 .mp__close {
+  position: relative; /* the visible circle stays small; the tap target is enlarged via ::before */
   display: grid;
   place-items: center;
   width: 32px;
@@ -46,6 +47,11 @@
   border: 1px solid rgba(245, 154, 69, 0.45);
   color: var(--color-cream);
   transition: background-color 0.3s, color 0.3s;
+}
+.mp__close::before {
+  content: '';
+  position: absolute;
+  inset: -6px; /* 32px visible circle → 44px real tap target, without looking bigger */
 }
 .mp__close:hover { background: var(--color-cream); color: var(--color-deep); }
 .mp__close svg { width: 0.85rem; height: 0.85rem; }

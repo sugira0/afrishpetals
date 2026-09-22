@@ -101,3 +101,12 @@
 }
 
 .bk-visual__logo { display: block; width: clamp(84px, 9vw, 130px); height: auto; margin-bottom: 1rem; }
+
+/* Landscape phones: the vw-driven title otherwise stays large while the visual band has very
+   little height to work with — shrink it so it sits with clear room below the nav. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .bk-visual { min-height: 18rem; padding-top: calc(var(--nav-h) + 0.5rem); padding-bottom: 1rem; }
+  .bk-visual__logo { width: 44px; margin-bottom: 0.35rem; }
+  .bk-title { font-size: clamp(1.7rem, 5.4vw, 2.6rem); margin-top: 0.5rem; }
+  .bk-sub { font-size: 0.9rem; margin-top: 0.4rem; }
+}

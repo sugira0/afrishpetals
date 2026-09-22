@@ -229,3 +229,20 @@
 }
 
 .ev-hero__logo { display: block; width: clamp(90px, 9vw, 140px); height: auto; margin-bottom: 0.6rem; }
+
+/* Landscape phones: drop the floating imagery (no room for it) and shrink the headline so the
+   tagline + actions sit closer to view instead of trailing far below the fold. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .ev-float { display: none; }
+  .ev-hero { padding-top: calc(var(--nav-h) + 0.5rem); padding-bottom: 0.9rem; }
+  .ev-hero__logo { width: 42px; margin-bottom: 0.25rem; }
+  .ev-hero__title { font-size: min(11vw, 11svh); }
+  .ev-hero__rule { margin: 0.5rem 0 0.4rem; }
+  .ev-hero__copy { font-size: 0.9rem; max-width: 22rem; }
+  .ev-hero__foot { gap: 0.5rem; }
+}
+@media (max-height: 400px) and (orientation: landscape) {
+  /* the smallest landscape phones (iPhone SE and similar): the eyebrow label is the least
+     essential line here — drop it for a little extra room */
+  .ev-hero [data-int='eyebrow'] { display: none; }
+}
