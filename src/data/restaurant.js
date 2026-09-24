@@ -61,7 +61,7 @@ export const stats = {
 /** `to` is a router path; `section` marks in-page anchors on the home page. */
 export const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Our Story', to: '/#story', section: 'story' },
+  { label: 'Our Story', to: '/story', section: 'story' },
   { label: 'Menu', to: '/#menu', section: 'menu' },
   { label: 'Experience', to: '/#experience', section: 'experience' },
   { label: 'Gallery', to: '/#gallery', section: 'gallery', requires: 'gallery' },

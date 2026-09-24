@@ -123,7 +123,7 @@ export default function Navbar({ ready, sectionsReady }) {
         </nav>
 
         <div className="nav__right">
-          <Link to="/events/book" className="nav__event" onClick={(e) => onNav(e, '/events/book')}>
+          <Link to="/events" className={`nav__event ${pathname.startsWith('/events') ? 'is-active' : ''}`} onClick={(e) => onNav(e, '/events')}>
             Plan an event
           </Link>
           <Button size="sm" to="/book" className="nav__cta">
@@ -155,7 +155,7 @@ export default function Navbar({ ready, sectionsReady }) {
           >
             <nav aria-label="Mobile">
               <ul>
-                {[...navLinks, { label: 'Plan an event', to: '/events/book' }].map((l, i) => (
+                {[...navLinks, { label: 'Plan an event', to: '/events' }].map((l, i) => (
                   <li key={l.to}>
                     <m.div
                       initial={{ y: 40, opacity: 0 }}

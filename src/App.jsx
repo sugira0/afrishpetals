@@ -14,6 +14,8 @@ import MenuPopup from './components/MenuPopup/MenuPopup.jsx'
 // Every route is its own chunk: a visitor to /contact never downloads the home
 // page's animation code, and vice-versa.
 const Home = lazy(() => import('./pages/Home.jsx'))
+const Story = lazy(() => import('./pages/Story.jsx'))
+const Events = lazy(() => import('./pages/Events.jsx'))
 const Contact = lazy(() => import('./pages/Contact.jsx'))
 const Booking = lazy(() => import('./pages/Booking.jsx'))
 const EventBooking = lazy(() => import('./pages/EventBooking.jsx'))
@@ -96,6 +98,8 @@ export default function App() {
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/story" element={<Story />} />
+              <Route path="/events" element={<Events />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/book" element={<Booking />} />
               <Route path="/events/book" element={<EventBooking />} />

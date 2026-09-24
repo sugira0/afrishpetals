@@ -43,6 +43,18 @@ export const pages = {
       'restaurant Kigali Rwanda',
     ],
   },
+  '/story': {
+    title: 'Our Story — Afrish Petals, African Restaurant in Kigali',
+    description:
+      'The story behind Afrish Petals: a premium African dining experience in Kigali, crafted with passion and served with love, near Norrsken.',
+    keywords: ['Afrish Petals story', 'African restaurant Kigali', 'best restaurant in Kigali'],
+  },
+  '/events': {
+    title: 'Events at Afrish Petals — Celebrations & Gatherings in Kigali',
+    description:
+      'Gather, celebrate and create memorable moments at Afrish Petals in Kigali. Birthdays, anniversaries, corporate gatherings and private dinners near Norrsken.',
+    keywords: ['event venue Kigali', 'private dinner Kigali', 'restaurant near Norrsken', 'birthday venue Kigali'],
+  },
   '/contact': {
     title: 'Contact — Afrish Petals, Restaurant Near Norrsken, Kigali',
     description:
