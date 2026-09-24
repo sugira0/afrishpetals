@@ -49,6 +49,10 @@ const local = (file, { w, h, alt, pos = 'center', widths } = {}) => {
   }
 }
 
+/** The restaurant's own photography (public/images/real, made by scripts/import-photos.py). */
+const REAL = { landscape: [480, 800, 1200, 1800], portrait: [480, 800, 1200] }
+const real = (name, kind, { w, h, alt, pos }) => local(`real/${name}.webp`, { w, h, alt, pos, widths: REAL[kind] })
+
 export const images = {
   hero: {
     plate1: photo('1504674900247-0877df9cc836', { w: 1200, h: 1200, alt: 'Seared beef with fresh herbs, chilli and cashews, photographed from above' }),
@@ -70,13 +74,13 @@ export const images = {
   // Atmosphere shots for the Menu tabs — deliberately NOT specific dishes, so they never misrepresent the menu.
   menu: {
     kitchen: photo('1551218808-94e220e084d2', { w: 1400, h: 1750, alt: 'A chef’s hands chopping fresh herbs and vegetables' }),
-    drinks: photo('1470337458703-46ad1756a187', { w: 1400, h: 1750, alt: 'A cocktail being poured over ice' }),
+    drinks: real('catering-drinks', 'portrait', { w: 1200, h: 1600, alt: 'Colourful mocktails in tall glasses at an Afrish Petals catered event' }),
     coffee: photo('1541167760496-1628856ab772', { w: 1400, h: 1750, alt: 'Milk being poured into a cup of coffee' }),
   },
   experience: {
     ingredients: photo('1551218808-94e220e084d2', { w: 1400, h: 1800, alt: 'A chef’s hands chopping fresh herbs and vegetables' }),
     ambience: photo('1550966871-3ed3cdb5ed0c', { w: 1400, h: 1800, alt: 'Warm, intimate restaurant interior' }),
-    events: photo('1414235077428-338989a2e8c0', { w: 1400, h: 1800, alt: 'A candlelit table set for a private dinner' }),
+    events: real('event-cake', 'portrait', { w: 1200, h: 1800, alt: 'A celebration cake and champagne on a red-draped table at an Afrish Petals event', pos: '50% 60%' }),
     live: photo('1528605248644-14dd04022da1', { w: 1400, h: 1800, alt: 'Friends sharing dishes across a long table' }),
   },
   gallery: [
@@ -95,14 +99,14 @@ export const images = {
     room: photo('1550966871-3ed3cdb5ed0c', { w: 1200, h: 1500, alt: 'Warm, intimate restaurant interior' }),
   },
   events: {
-    candle: photo('1414235077428-338989a2e8c0', { w: 1600, h: 1200, alt: 'A candlelit table with a plated dish and glassware', pos: '50% 55%' }),
-    toast: photo('1519671482749-fd09be7ccebf', { w: 1200, h: 1500, alt: 'Guests raising glasses of wine in a toast', pos: '50% 40%' }),
-    longTable: photo('1511795409834-ef04bbd61622', { w: 1400, h: 1000, alt: 'A long celebration table dressed with flowers and glassware' }),
-    gathering: photo('1517457373958-b7bdd4587205', { w: 1400, h: 1000, alt: 'Friends laughing together at an evening gathering under string lights' }),
+    candle: real('event-speech', 'landscape', { w: 1800, h: 1200, alt: 'Guests seated along a long table decorated in red and white at an Afrish Petals event', pos: '50% 50%' }),
+    toast: real('event-bride', 'portrait', { w: 1200, h: 1800, alt: 'A bride-to-be and a friend smiling at a celebration table', pos: '50% 45%' }),
+    longTable: real('catering-donuts', 'portrait', { w: 1200, h: 1600, alt: 'Doughnuts, pastries and juices on a catering display', pos: '50% 70%' }),
+    gathering: real('catering-fruit', 'portrait', { w: 1200, h: 1600, alt: 'Fruit cups and fresh juices on a catering display', pos: '50% 55%' }),
     bar: photo('1543007630-9710e4a00a20', { w: 1600, h: 1200, alt: 'A warmly lit bar with rows of pendant lights', pos: '50% 40%' }),
-    decor: photo('1519225421980-715cb0215aed', { w: 1400, h: 1000, alt: 'A long table set with wildflowers and linen' }),
+    decor: real('catering-buffet', 'landscape', { w: 1800, h: 1350, alt: 'A catering table of juices, cocktails and desserts on white display stands' }),
   },
   cta: {
-    table: photo('1414235077428-338989a2e8c0', { w: 2000, h: 1300, alt: 'A candlelit restaurant table with glassware', pos: '50% 55%' }),
+    table: real('event-long-table', 'landscape', { w: 1800, h: 1200, alt: 'A long celebration table dressed with red roses and candles', pos: '50% 55%' }),
   },
 }

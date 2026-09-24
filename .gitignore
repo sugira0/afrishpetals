@@ -6,3 +6,6 @@ dist
 .vercel
 *.log
 .DS_Store
+
+# raw uploads (optimised copies live in public/images/real)
+Photos/

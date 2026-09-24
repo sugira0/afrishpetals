@@ -54,6 +54,18 @@ export default function Hero({ ready }) {
     <section id="home" ref={root} className="hero" aria-label="Afrish Petals — welcome">
       {/* ── Atmosphere ── */}
       <div className="hero__bg" data-hero="bg" aria-hidden="true">
+        <video
+          className="hero__video"
+          src="/video/hero.mp4"
+          poster="/images/real/catering-buffet-1200.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          tabIndex={-1}
+        />
+        <div className="hero__video-shade" />
         <div className="hero__shift" data-hero="shift" />
         <div className="hero__texture" data-hero="texture">
           <BotanicalTexture className="hero__texture-inner" />
