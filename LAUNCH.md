@@ -56,7 +56,7 @@ If the site will live on a different domain, change `SITE.url` in `src/data/seo.
 - [ ] Submit a real test through **each** form; confirm the email arrives and *Reply* goes to the guest.
 - [ ] Tap the WhatsApp button on each page: the message should be prefilled and reach +250 786 948 980.
 - [ ] Paste the URL into WhatsApp/Facebook to check the share card (logo + "Premium African Restaurant").
-- [ ] **Google Search Console** → add the property → submit `https://afrishpetals.rw/sitemap.xml`. Same in Bing Webmaster Tools.
+- [ ] **Google Search Console** → add the property → submit `https://www.afrishpetals.rw/sitemap.xml` (the site redirects the bare domain to www, so www is the canonical address). Same in Bing Webmaster Tools.
 - [ ] Create / claim the **Google Business Profile**, spelling the address "near Norrsken" exactly as on the site — this is what actually wins "best restaurant in Kigali" / "restaurant near Norrsken" searches (see below).
 - [ ] Run Lighthouse (Chrome DevTools) on `/` and `/contact` (mobile).
 

@@ -12,7 +12,7 @@
 
 export const SITE = {
   /** Production origin — no trailing slash. Change if the domain ever changes. */
-  url: 'https://afrishpetals.rw',
+  url: 'https://www.afrishpetals.rw',
   name: 'Afrish Petals',
   locale: 'en_RW',
   /** 1200×630 share image in /public (regenerate with scripts/make-og-image.py). */
