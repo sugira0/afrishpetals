@@ -1,3 +1,5 @@
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { join, resolve } from 'node:path'
 import { SITE, pages } from '../src/data/seo.js'
 import { restaurant } from '../src/data/restaurant.js'
 
@@ -70,20 +72,21 @@ export function jsonLd() {
   }
 }
 
-function headTags() {
-  const home = pages['/']
+function headTags(path = '/') {
+  const home = pages[path] || pages['/']
+  const url = abs(path)
   const img = abs(SITE.ogImage)
   return [
     `<meta name="description" content="${esc(home.description)}" />`,
     ...(home.keywords ? [`<meta name="keywords" content="${esc(home.keywords.join(', '))}" />`] : []),
     `<meta name="robots" content="index, follow, max-image-preview:large" />`,
-    `<link rel="canonical" href="${abs('/')}" />`,
+    `<link rel="canonical" href="${url}" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:site_name" content="${esc(SITE.name)}" />`,
     `<meta property="og:locale" content="${SITE.locale}" />`,
     `<meta property="og:title" content="${esc(home.title)}" />`,
     `<meta property="og:description" content="${esc(home.description)}" />`,
-    `<meta property="og:url" content="${abs('/')}" />`,
+    `<meta property="og:url" content="${url}" />`,
     `<meta property="og:image" content="${img}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
@@ -98,16 +101,46 @@ function headTags() {
     .join('\n')
 }
 
+const START = '<!--seo:start-->'
+const END = '<!--seo:end-->'
+
+/** The page's own <title> + head tags, written into the static HTML so crawlers see them without running JS. */
+function htmlForRoute(html, path) {
+  const page = pages[path] || pages['/']
+  return html
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(page.title)}</title>`)
+    .replace(new RegExp(`${START}[\\s\\S]*?${END}`), () => `${START}\n${headTags(path)}\n    ${END}`)
+}
+
 export default function seoPlugin() {
+  let outDir = 'dist'
   return {
     name: 'afrish-seo',
+
+    configResolved(config) {
+      outDir = resolve(config.root, config.build.outDir)
+    },
+
+    // After the bundle is written: one static HTML file per route (dist/story/index.html …) so every URL
+    // ships its own title, description and canonical. The host serves these before the SPA fallback rewrite.
+    closeBundle() {
+      const indexFile = join(outDir, 'index.html')
+      if (!existsSync(indexFile)) return
+      const html = readFileSync(indexFile, 'utf8')
+      for (const path of Object.keys(pages)) {
+        if (path === '/') continue
+        const dir = join(outDir, path)
+        mkdirSync(dir, { recursive: true })
+        writeFileSync(join(dir, 'index.html'), htmlForRoute(html, path))
+      }
+    },
 
     transformIndexHtml: {
       order: 'pre',
       handler(html) {
         return html
           .replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(pages['/'].title)}</title>`)
-          .replace('</head>', `${headTags()}\n  </head>`)
+          .replace('</head>', `    ${START}\n${headTags('/')}\n    ${END}\n  </head>`)
       },
     },
 
